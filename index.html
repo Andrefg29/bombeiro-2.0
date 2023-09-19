@@ -14,11 +14,54 @@
             align-content: center;
             height: 90vh;
         }
+
+        img:nth-child(1){
+            display: flex;
+        }
+        img:nth-child(2){
+            display: none;
+        }
+        img:nth-child(3){
+            display: none;
+        }
+        
     </style>
+
+<script>
+    var temp = setTimeout(abrir, 200);
+    var temp = setTimeout(abrire, 400);
+    var temp = setTimeout(abri, 600);
+    var temp = setTimeout(abrir, 800);
+    var temp = setTimeout(abrire, 1000);
+    var temp = setTimeout(abri, 1200);
+    var temp = setTimeout(abrir, 1400);
+    var temp = setTimeout(abrire, 1600);
+    var temp = setTimeout(abri, 1800);
+    var temp = setTimeout(abri, 2000);
+    var temp = setTimeout(principal, 2000);
+    function abrir(){
+        document.getElementById('img1').style.display = "none";
+        document.getElementById('img2').style.display = "flex";
+    }
+
+    function abrire(){
+        document.getElementById('img2').style.display = "none";
+        document.getElementById('img3').style.display = "flex"
+    }
+
+    function abri(){
+        document.getElementById('img1').style.display = "flex";
+        document.getElementById('img3').style.display = "none"
+    }
+
+    function principal(){
+        window.open("principal.html", "_self");
+    }
+</script>
 </head>
 <body>
-    <img src="image/sirene.png">
-    <img src="image/sirene2.png">
-    <img src="image/sirene3.png">
+    <img src="image/sirene.png" id="img1">
+    <img src="image/sirene2.png" id="img2">
+    <img src="image/sirene3.png" id="img3">
 </body>
 </html>
