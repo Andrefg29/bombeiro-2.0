@@ -77,12 +77,13 @@ h2 {
     width: 90px;
     height: 40px;
     color: white;
-    background-color: rgb(164, 19, 19);
+    background-color: red;
     border: none;
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
     margin: 3%;
-    font-size: 16px
+    font-size: 16px;
+    border: 2px solid rgba(0, 0, 0, 0.211);
 }
 
 .arruma2{
