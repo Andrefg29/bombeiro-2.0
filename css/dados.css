@@ -50,13 +50,14 @@ fieldset{
     text-transform: uppercase;
     letter-spacing: 3px;
     font-size: 30px;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
 }
 
 form{
     width: 25%;
     height: 100%;
     
-    background-color: #131377bb;
+    background-color: #810e0e9f;
     display: flex;
     flex-direction: column;
     padding: 30px;
@@ -68,20 +69,20 @@ form{
 }
 
 input{
-    background-color: #3f3f94bb;
+    background-color: #e6e6e6bb;
     border: none;
     outline: none;
     font-family: 'Poppins', sans-serif;
-    color: #fff;
+    color: #000000;
     padding: 1%;
     width:100%
 }
 
 select{
-    background-color: #3f3f94bb;
+    background-color: #e6e6e6bb;
     border: none;
     outline: none;
-    color: #fff;
+    color: #000000;
     font-family: 'Poppins', sans-serif;
     padding: 1%;
     width: 100%;
@@ -92,7 +93,7 @@ select{
     width: 70px;
     height: 30px;
     color: white;
-    background-color: #2f2f9f;
+    background-color: #050505;
     border: none;
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
@@ -124,7 +125,7 @@ select{
 }
 
 .btn:hover{
-    background-color: #080847;
+    background-color: #970a0a;
     transition: .2s;
 }
 
