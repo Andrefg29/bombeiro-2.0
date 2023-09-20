@@ -100,8 +100,9 @@
     align-items: center;
     align-content: center;
     height: 200px;
-    color: rgb(230, 224, 57);
+    color: rgb(224, 27, 27);
     overflow: hidden;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .port img{
