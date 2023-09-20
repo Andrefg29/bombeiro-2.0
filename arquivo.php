@@ -1,6 +1,6 @@
-<?php
+<?php 
 
-$op1 = "Não";
+$op1 = "No";
 $op2 = $_POST["op2"];
 $op3 = $_POST["op3"];
 $op4 = $_POST["op4"];
