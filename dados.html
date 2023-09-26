@@ -7,49 +7,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dados Pessoais</title>
   <link rel="icon" type="image/png" href="image/logo_noar.png">
-  <link rel="stylesheet" href="css/dados.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <link rel="stylesheet" href="css/login.css">
+  <script src="https://kit.fontawesome.com/f87260a7c7.js" crossorigin="anonymous"></script>
+  <style>
+    body{
+      background-image: url('image/fundo.jpg');
+    }
+  </style>
 </head>
 
 <body>
-    <div class="formulario">
-        <h3>Insira os Dados do Paciente</h3>
-        <fieldset>
+    <div class="caixacadastro">
+        <h2>Insira os Dados do Paciente</h2>
+        
     <form method="post" action="">
-      <div class="forms">
-        <div class="data">Data:<input type="date" id="date"></div>
+      <div class="input">
+        <div class="data">Data:&nbsp;&nbsp;<input type="date" id="date" style="width: 200px;"></div>
         <div class="genero">
-          Sexo:
-          <select name="sexo" id="sexo">
+          Sexo: &nbsp;&nbsp;
+          <select name="sexo" id="sexo" style="width: 200px;">
             <option value="-----">-----</option>
             <option value="masculino">Masculino</option>
             <option value="feminino">Feminino</option>
           </select>
         </div>
         <div class="hospital">
-          Nome do Hospital: <input type="text" id="local">
+          <span class="fa-solid fa-hospital"></span><input type="text" id="local" placeholder="Nome do Hospital">
         </div>
+        
         <div class="nome">
-          Nome do Paciente: <input type="text" id="nome">
+          <span class="fa-solid fa-user"></span>
+          <input type="text" id="nome" placeholder="Nome do Paciente">
         </div>
         <div class="idade">
-          Idade: <input type="text" id="idade">
+          <span class="fa-solid fa-arrow-up-9-1"></span>
+          <input type="number" id="idade" placeholder="Idade">
         </div>
         <div class="identidade">
-          RG/CPF Paciente: <input type="text" id="identidade">
+          <span class="fa-solid fa-address-card"></span>
+          <input type="text" id="identidade" placeholder="RG/CPF Paciente">
         </div>
 
         <div class="telefone">
-            Telefone: <br>
-            <input id="phone" type="tel" name="phone" />
-          <div class="alert alert-info" style="display: none;"></div>
+          <span class="fa-solid fa-phone"></span>
+            <input id="phone" type="tel" name="phone" placeholder="Telefone">
         </div>
         <div class="local_ocorrencia">
-          Local da ocorrência: <input type="text" name="local_ocorrencia" id="local_ocorrencia">
+          <span class="fa-solid fa-location-dot"></span>
+          <input type="text" name="local_ocorrencia" id="local_ocorrencia" placeholder="Local da ocorrência">
         </div>
-        Acompanhante? <input type="checkbox" id="acompanhante" onchange="mostrarTextbox()">
-        <div class="separa_btn" id="botores">
+      </div>
+        <div class="botoes" id="botores">
           <input type="submit" value="Enviar" class="btn">
           <input type="reset" value="Limpar" class="btn">
         </div>
@@ -73,47 +81,11 @@
         <input type="reset" value="Limpar" class="btn">
       </div>
 </form>
-</fieldset>
-</div>
+
+
 </body>
 
 <script>
-  const phoneInputField = document.querySelector("#phone");
-  const phoneInput = window.intlTelInput(phoneInputField, {
-    utilsScript:
-      "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-  });
-
-  const info = document.querySelector(".alert-info");
-
-  function process(event) {
-    event.preventDefault();
-
-    const phoneNumber = phoneInput.getNumber();
-
-    info.style.display = "";
-    info.innerHTML = `Phone number in E.164 format: <strong>${phoneNumber}</strong>`;
-  }
-
-  function getIp(callback) {
-    fetch('https://ipinfo.io/json?token=<your token>', { headers: { 'Accept': 'application/json' } })
-      .then((resp) => resp.json())
-      .catch(() => {
-        return {
-          country: 'br',
-        };
-      })
-      .then((resp) => callback(resp.country));
-  }
-
-
-  const phoneNumber = window.intlTelInput(phoneInputField, {
-    preferredCountries: ["br", "us", "in", "de"],
-    utilsScript:
-      "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-  });
-
-
   function mostrarTextbox() {
     var checkbox = document.getElementById("acompanhante")
     var form = document.getElementById("acompanhant")
@@ -129,11 +101,6 @@
       acompanhant.style.display = "none";
       document.getElementById('botores').style.display = "flex"
     }
-
-  }
-
-  function mostrarTextbox2() {
-
 
   }
 
