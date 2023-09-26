@@ -79,7 +79,7 @@ h2{
 
 form{
     width: 100%;
-    height: auto;
+    height: 70%;
     display: flex;
     align-items: center;
     align-content: center;
@@ -162,6 +162,9 @@ form{
 }}
 
 @media screen and (max-width: 600px) {
+    h2{
+        font-weight: 500;
+    }
     .caixacadastro{
         width: 350px
     }
