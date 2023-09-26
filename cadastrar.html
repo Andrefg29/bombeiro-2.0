@@ -42,7 +42,7 @@
         <br>
 
         <div class="botoes">
-            <input type="button" value="Cadastrar" onclick="Cadastrar();">
+            <button onclick="Cadastrar();" id="button">Cadastrar &nbsp;<div class="carregar" id="carregar"><p>.</p><p>.</p><p>.</p></div></button>
             <input type="reset" value="Limpar">
         </div>
         </form>
@@ -74,21 +74,22 @@
                 console.log(lista[x].senha);             
                 console.log("  ");
 
-            }},
+            }
+            window.open("principal.html", "_self");},
 			error: function(xhr, status, error) {
-				// Aqui poderíamos preencher uma <div> com o innerHTML por exemplo
-				console.error('Ocorreu um erro ao enviar os dados: ' + error);
+				alert("Ocorreu um erro há cadastrar os dados");
 			  },
 			beforeSend: function(xhr) {
-				// Faz algo antes do envio, como exibir uma animação por exemplo.
+                
+				document.getElementById('carregar').style.display = "flex";
+                document.getElementById('button').style.backgroundColor = "#635f5f";
 			},
 			complete: function(xhr, status) {
-				// Faz algo após a conclusão, como ocultar uma animação por exemplo. 
-				// Vai ser executado mesmo se ocorrer um erro.
+				
 			},
-			timeout: 2000    // Define um tempo limite de 5 segundos (5000 milissegundos)
+			timeout: 5000    // Define um tempo limite de 5 segundos (5000 milissegundos)
 		});
-		
+
 		
 	}
 </script>
