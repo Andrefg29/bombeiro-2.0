@@ -188,6 +188,23 @@ input[type="text"] {
     transition: .5s;
 }
 
+input[type="number"] {
+    padding: .7rem;
+    width: 60%;
+    height: 10px;
+    border: none;
+    border-bottom: 2px solid #2c0202;
+    outline: none;
+    background-color: rgb(246, 246, 246);
+    font-size: 16px;
+    outline: none;
+    transition: all .3s;
+    font-family: 'Poppins', sans-serif;
+    margin: 2%;
+    margin-top: -1%;
+    transition: .5s;
+}
+
 input[type="text"]:focus{
     border-bottom: 2px solid red;
 }
