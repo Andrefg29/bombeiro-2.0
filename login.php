@@ -1,22 +1,38 @@
+<?php
+
+if(isset($_GET["login"])){
+  $login = $_GET["login"];
+  if($login == 0){
+    echo("<script>
+    function alerta()
+    {
+      alert('Email ou Senha incorretos')
+    }
+    </script>");
+  }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faça Login - Cifras Religiosas - suas cifras estão aqui!</title>
+    <title>Faça Login - Bombeiros Voluntários</title>
     <link href="css/login.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="img/Logo.png">
     <script src="https://kit.fontawesome.com/f87260a7c7.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body onload="alerta();">
 
     
 
     <div class="caixacadastro">
         <br>
         <h2>Faça Login</h2>
-        <form method="post" action="crud.php">
+        <form method="post" action="principal.php">
         <div class="input">
             <span class="fa fa-envelope"></span>
             <input type="text" name="email" placeholder="Email" id="email" onkeyup="Email();" required="required" >
@@ -35,7 +51,7 @@
 
         <div class="botoes">
             <a href="#">Esqueci minha Senha</a>
-            <input type="submit" value="Entrar">
+            <input type="submit" value="Entrar" name="entrar">
 
         </div>
         </form>

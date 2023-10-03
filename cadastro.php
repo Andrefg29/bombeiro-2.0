@@ -9,5 +9,5 @@ $senha = $_POST["senha"];
 
 $comando = $pdo->prepare("INSERT INTO voluntario (nome, email, cpf, senha)VALUES('$nome', '$email', '$cpf', '$senha')" );
     $resultado = $comando->execute();
-    header("Location: principal.html");
+    header("Location: principal.php");
 ?>
