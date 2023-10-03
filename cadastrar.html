@@ -16,7 +16,7 @@
         <br>
         <h2>Faça seu Cadastro</h2>
       
-        <form method="post" action="" id="cadastro">
+        <form method="post" action="cadastro.php" id="cadastro">
         <div class="input">
             <span class="fa fa-user-circle"></span>
             <input type="text" name="nome" placeholder="Nome Completo" required="required" id="nome">
@@ -42,7 +42,7 @@
         <br>
 
         <div class="botoes">
-            <button onclick="Cadastrar();" id="button">Cadastrar &nbsp;<div class="carregar" id="carregar"><p>.</p><p>.</p><p>.</p></div></button>
+            <input type="submit" value="Cadastrar">
             <input type="reset" value="Limpar">
         </div>
         </form>
@@ -50,49 +50,6 @@
         <a href="login.html">Já tenho conta</a>
     </div>
 </body>
-<script> 
-    function Cadastrar(){
-		
-		var dados = $('#cadastro').serialize(); 
-		
-		$.ajax({
-			type: "POST",
-			url: "cadastro.php",
-			data: dados,
-			dataType: 'json',
-							
-			success: function(meu_json)
-			{
-					  
-				var valores = meu_json;       
-                var lista = valores.dados;                   
-                for(x=0;x<lista.length;x++)
-            {
-                console.log(lista[x].nome);                         
-                console.log(lista[x].email);                       
-                console.log(lista[x].cpf);         
-                console.log(lista[x].senha);             
-                console.log("  ");
-
-            }
-            window.open("principal.html", "_self");},
-			error: function(xhr, status, error) {
-				alert("Ocorreu um erro há cadastrar os dados");
-			  },
-			beforeSend: function(xhr) {
-                
-				document.getElementById('carregar').style.display = "flex";
-                document.getElementById('button').style.backgroundColor = "#635f5f";
-			},
-			complete: function(xhr, status) {
-				
-			},
-			timeout: 5000    // Define um tempo limite de 5 segundos (5000 milissegundos)
-		});
-
-		
-	}
-</script>
 <script src="js/validar.js"></script>
 <script src="js/login.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
