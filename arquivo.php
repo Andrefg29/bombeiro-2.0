@@ -27,7 +27,7 @@ $resposta =
             "op3"  => $op3,
             "op4"  => $op4,
             "op5"  => $op5,
-            "op6 "  => $op6,
+            "op6"  => $op6
       ];
 
 array_push($dados, $resposta);
