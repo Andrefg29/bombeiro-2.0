@@ -21,7 +21,6 @@ body {
 }
 
 
-
 .texto {
     background-color: rgb(164, 19, 19);
     width: 58.4%;
@@ -76,7 +75,7 @@ h2 {
     width: 90px;
     height: 40px;
     color: white;
-    background-color: red;
+    background: rgba(218,21,21,1);
     border: none;
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
@@ -91,7 +90,7 @@ h2 {
 
 .separa_btn{
     position: fixed;
-    top: 420px;
+    top: 83%;
     width: 100%;
     display: flex;
     flex-direction: row;
