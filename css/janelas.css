@@ -246,3 +246,59 @@ label.agrupamento2{
 .container{
     height: 400px; 
 }
+
+.loading{
+    display: none;
+    position: absolute;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+    width: 100%;
+    z-index: 2;
+    background-color: white;
+}
+.carregamento{
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 10px solid crimson;
+    border-right: 10px solid transparent;
+    animation: lo 1s ease-in-out infinite;
+}
+
+@keyframes lo{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.checko {
+    display: none;
+    position: absolute;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+    width: 100%;
+    z-index: 3;
+    background-color: white;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+}
+.checko i{
+    font-size: 100px;
+}
+.checko span{
+    
+    cursor: pointer;
+}
+.checko span:hover{
+    text-decoration: underline;
+}
