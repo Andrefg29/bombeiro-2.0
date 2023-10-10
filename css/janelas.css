@@ -20,6 +20,7 @@ body {
     
 }
 
+
 .texto {
     background-color: rgb(164, 19, 19);
     width: 58.4%;
@@ -74,7 +75,7 @@ h2 {
     width: 90px;
     height: 40px;
     color: white;
-    background-color: red;
+    background: rgba(218,21,21,1);
     border: none;
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
@@ -84,14 +85,13 @@ h2 {
 }
 
 .arruma2{
-    position: absolute;
     margin-left: 25px;
 }
 
 .separa_btn{
     position: fixed;
-    top: 420px;
-    width: 80%;
+    top: 83%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -106,30 +106,28 @@ h2 {
 }
 
 .texto1{
-    position: absolute;
-    margin-left: 25px;
+    margin-left: 1%;
     overflow: hidden;
-    width: 25%;
+    width: 85%;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 
 .agrupamento input[type="checkbox"] {
-    position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
+    display: none;
 }
 
 .checkmark {
-    position: absolute;
-    top: 10;
-    left: 10;
+    
     height: 21.5px;
     width: 21.5px;
     background-color: rgb(190, 189, 189);
     cursor: pointer;
+    display: block;
 }
 
 .agrupamento:hover input~.checkmark {
@@ -145,7 +143,6 @@ h2 {
 
 .agrupamento:after {
     content: "";
-    position: absolute;
     display: none;
 }
 
@@ -154,8 +151,8 @@ h2 {
 }
 
 .agrupamento .checkmark:after {
-    left: 9px;
-    top: 5px;
+    margin-left: 9px;
+    margin-top: 5px;
     width: 5px;
     height: 10px;
     border: solid white;
@@ -166,7 +163,6 @@ h2 {
 }
 
 .escreve {
-    position: absolute;
     margin-top: -5.5px;
     margin-left: 25px;
 }
@@ -209,9 +205,13 @@ input[type="text"]:focus{
     border-bottom: 2px solid red;
 }
 
+input[type="number"]:focus{
+    border-bottom: 2px solid red;
+}
+
 select{
     padding: .2rem;
-    width: 210px;
+    width: 75%;
     border: 2px solid #50505064;
     color: #2c0202;
     font-size: 16px;
@@ -221,12 +221,84 @@ select{
 }
 
 .outro{
-    position: absolute;
     margin-top: -5.5px;
     margin-left: -1.5px;
 }
 
 label{
-    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    height: 25px;
+}
+
+label.agrupamento2{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.form{
+    overflow-y: scroll;
+    height: 400px;
+    display: block;
+}
+
+.container{
+    height: 400px; 
+}
+
+.loading{
+    display: none;
+    position: absolute;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+    width: 100%;
+    z-index: 2;
+    background-color: white;
+}
+.carregamento{
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 10px solid crimson;
+    border-right: 10px solid transparent;
+    animation: lo 1s ease-in-out infinite;
+}
+
+@keyframes lo{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.checko {
+    display: none;
+    position: absolute;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+    width: 100%;
+    z-index: 3;
+    background-color: white;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+}
+.checko i{
+    font-size: 100px;
+}
+.checko span{
     
+    cursor: pointer;
+}
+.checko span:hover{
+    text-decoration: underline;
 }

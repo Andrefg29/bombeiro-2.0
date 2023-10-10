@@ -9,10 +9,12 @@
     <link rel="icon" type="image/png" href="image/logo_noar.png">
     <link rel="stylesheet" href="css/janelas.css">
     <script src="jquery-1.8.2.min.js"></script>
+    <script src="https://kit.fontawesome.com/f87260a7c7.js" crossorigin="anonymous"></script>
 </head>
 <script>
     function Listar(){
-		// A variável "dados" conterá todos os campos do <form id="form1">
+		
+
 		var dados = $('#form1').serialize(); // TODOS OS CAMPOS DO <form> DEVEM TER 'name='
 		
 		$.ajax({
@@ -42,17 +44,22 @@
 				console.error('Ocorreu um erro ao enviar os dados: ' + error);
 			  },
 			beforeSend: function(xhr) {
-				// Faz algo antes do envio, como exibir uma animação por exemplo.
+				document.getElementById("carregare").style.display = "flex";
 			},
 			complete: function(xhr, status) {
-				// Faz algo após a conclusão, como ocultar uma animação por exemplo. 
-				// Vai ser executado mesmo se ocorrer um erro.
+				document.getElementById("check").style.display = "flex";
 			},
 			timeout: 5000    // Define um tempo limite de 5 segundos (5000 milissegundos)
 		});
 		
 		
 	}
+
+        function edit(){
+            document.getElementById("check").style.display = "none";
+            document.getElementById("carregare").style.display = "none";
+        }
+
 </script>
 <body>
 
@@ -62,7 +69,7 @@
                 <div class="d1">
                    
 
-                    <label for="op2" class="agrupamento">
+                    <label for="op2" class="agrupamento2">
                         <div class="titulo"><p>Respiratório</p></div>
                         <div class="arruma2">
                             <select name="op2" id="op2">
@@ -73,7 +80,7 @@
                         </div>
                     </label><br>
 
-                    <label for="op3" class="agrupamento">
+                    <label for="op3" class="agrupamento2">
                         <div class="titulo"><p>Diabetes</p></div>
                         <div class="arruma2">
                             <select name="op3" id="op3">
@@ -97,7 +104,7 @@
                 </div>
 
                 <div class="d3">
-                    <label for="op4" class="agrupamento">
+                    <label for="op4" class="agrupamento2">
                         <div class="titulo"><p>Obstétrico</p></div>
                         <div class="arruma2">
                             <select name="op4" id="op4">
@@ -109,7 +116,7 @@
                         </div>
                     </label><br>
 
-                    <label for="op5" class="agrupamento">
+                    <label for="op5" class="agrupamento2">
                         <div class="titulo"><p>Transporte</p></div>
                         <div class="arruma2">
                             <select name="op5" id="op5">
@@ -124,8 +131,8 @@
                         </div>
                     </label><br>
 
-                    <label for="op6" class="agrupamento">
-                        <div class="titulo"><p>Outro</p></div>
+                    <label for="op6" class="agrupamento2">
+                        <div class="titulo"><p>Outros</p></div>
                         <div class="arruma2">
                             <input type="text" placeholder="Digite Aqui" name="op6">
                         </div>
@@ -138,6 +145,11 @@
                 <input type="reset" value="Limpar" class="btn">
             </div>
         </form>
+    </div>
+    <div class="loading" id="carregare"><span class="carregamento"></span></div>
+    <div class="checko" id="check">
+        <i class="fa-solid fa-circle-check" style="color: #51cb25;"></i><br>
+        <span onclick="edit();">Alterar Dados</span>
     </div>
 </body>
 

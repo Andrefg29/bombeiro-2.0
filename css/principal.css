@@ -12,10 +12,25 @@ body{
     
 }
 
+h3{ 
+    font-weight: 700;
+}
+
+.ti{
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    background: rgb(36,0,0);
+    background: -webkit-linear-gradient(90deg, rgba(36,0,0,1) 0%, rgba(121,11,9,1) 37%, rgba(255,51,0,1) 100%);
+    -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0     
+}
+
 .abacima{
     color: #000;
     margin: 1%;
-    width: 65%;
+    width: 75%;
     text-align: center;
     display: flex;
     flex-direction: row;
@@ -24,20 +39,30 @@ body{
     justify-content: space-between;
     padding: 0 5%;
     justify-items: center;
-    border: 2px solid rgba(0, 0, 0, 0.211);
+    border: 2px solid rgba(122, 94, 94, 0.459);
     border-radius: 25px;
     height: 40px;
     transition: .3s;
 }
 
+.abacima h3  
+{
+    text-align: left;
+    margin: 0;
+    width: 85%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 .abacima:hover{
     color: #fff;
-    background-color: red;
+    background: rgba(218,21,21,1)
 }
 
 .abacima.active{
     color: #fff;
-    background-color: red;
+    background: rgba(218,21,21,1)
 }
 
 .abas{
@@ -105,4 +130,28 @@ iframe{
 .termo:hover{
     background-color: rgb(134, 16, 16);
     transition: .5s;
+}
+
+@media (max-width: 600px){
+    .ti{
+        display: none;
+    }
+    .formes{
+        flex-direction: column;
+    }
+    .abas{
+        flex-direction: row;
+        justify-content: left;
+        width: 95%;
+        overflow-x: scroll;
+    }
+    .iframes{
+        width: 95%
+    }
+    .abacima{
+        height: 35px;
+        width: 150px;
+        font-size: .7em ;
+        padding: 0 2%;
+    }
 }

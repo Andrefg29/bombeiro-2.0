@@ -88,14 +88,14 @@ include('conecta.php');
 </div>
     <div class="formes">
     <div class="abas">
-        <h3>Tópicos:</h3>
+        <h3 class="ti">Tópicos:</h3>
         <div class="abacima active" onclick="abrir();" id="aba1"><h3>Tipo de Ocorrência:</h3><i class="fa-solid fa-chevron-right" id="seta"></i></div>
         <div class="abacima" onclick="abrir2();" id="aba2"><h3>Sobre a Vítima:</h3><i class="fa-solid fa-chevron-right" id="seta2"></i></div>
         <div class="abacima" onclick="abrir3();" id="aba3"><h3>Problemas:</h3><i class="fa-solid fa-chevron-right" id="seta3"></i></div>
         <div class="abacima" onclick="abrir4();" id="aba4"><h3>Procedimentos:</h3><i class="fa-solid fa-chevron-right" id="seta4"></i></div>
         <div class="abacima" onclick="abrir5();" id="aba5"><h3>Condução:</h3><i class="fa-solid fa-chevron-right" id="seta5"></i></div>
         <div class="abacima" onclick="abrir6();" id="aba6"><h3>Sinais e Sintomas:</h3><i class="fa-solid fa-chevron-right" id="seta6"></i></div>
-        <div class="abacima" onclick="abrir7();" id="aba7"><h3>Sinais e Sintomas pt.2:</h3><i class="fa-solid fa-chevron-right" id="seta7"></i></div>
+        <div class="abacima" onclick="abrir7();" id="aba7"><h3>Anamnese:</h3><i class="fa-solid fa-chevron-right" id="seta7"></i></div>
     </div>
     
     <div class="iframes">
@@ -105,7 +105,7 @@ include('conecta.php');
         <iframe src="procedimentos.html" id="iframe4" width="100%" height="100%"></iframe>
         <iframe src="conducao.html" id="iframe5" width="100%" height="100%"></iframe>
         <iframe src="sinaisesintomas.html" id="iframe6" width="100%" height="100%"></iframe>
-        <iframe src="sinaisesintomas2.html" id="iframe7" width="100%" height="100%"></iframe>
+        <iframe src="anamnese.html" id="iframe7" width="100%" height="100%"></iframe>
     </div>
 </div>
 
