@@ -32,7 +32,7 @@ if(isset($_GET["login"])){
     <div class="caixacadastro">
         <br>
         <h2>Faça Login</h2>
-        <form method="post" action="principal.php">
+        <form method="post" action="pesquisa.php">
         <div class="input">
             <span class="fa fa-envelope"></span>
             <input type="text" name="email" placeholder="Email" id="email" onkeyup="Email();" required="required" >
