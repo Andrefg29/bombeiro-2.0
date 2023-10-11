@@ -35,9 +35,9 @@
       <br>
         <h2>Insira os Dados do Paciente</h2>
         
-    <form method="post" action="">
+    <form method="post" action="dados.php">
       <div class="input">
-        <div class="data">Data:&nbsp;&nbsp;<input type="date" id="date" style="width: 230px;"></div>
+        <div class="data">Data:&nbsp;&nbsp;<input type="date" id="date" style="width: 230px;" name="data"></div>
         <div class="genero">
           Sexo: &nbsp;&nbsp;
           <select name="sexo" id="sexo" style="width: 250px;">
@@ -47,29 +47,29 @@
           </select>
         </div>
         <div class="hospital">
-          <span class="fa-solid fa-hospital"></span><input type="text" id="local" placeholder="Nome do Hospital">
+          <span class="fa-solid fa-hospital"></span><input type="text" id="local" placeholder="Nome do Hospital" name="hospital">
         </div>
         
         <div class="nome">
           <span class="fa-solid fa-user"></span>
-          <input type="text" id="nome" placeholder="Nome do Paciente">
+          <input type="text" id="nome" placeholder="Nome do Paciente" name="paciente">
         </div>
         <div class="idade">
           <span class="fa-solid fa-arrow-up-9-1"></span>
-          <input type="number" id="idade" placeholder="Idade">
+          <input type="number" id="idade" placeholder="Idade" name="idade">
         </div>
         <div class="identidade">
           <span class="fa-solid fa-address-card"></span>
-          <input type="text" id="identidade" placeholder="RG/CPF Paciente">
+          <input type="text" id="identidade" placeholder="RG/CPF Paciente" name="doc">
         </div>
 
         <div class="telefone">
           <span class="fa-solid fa-phone"></span>
-            <input id="phone" type="tel" name="phone" placeholder="Telefone">
+            <input id="phone" type="tel" name="telefone" placeholder="Telefone">
         </div>
         <div class="local_ocorrencia">
           <span class="fa-solid fa-location-dot"></span>
-          <input type="text" name="local_ocorrencia" id="local_ocorrencia" placeholder="Local da ocorrência">
+          <input type="text" name="local" id="local_ocorrencia" placeholder="Local da ocorrência">
         </div>
       </div>
       <br>
