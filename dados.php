@@ -14,7 +14,10 @@ $local = $_POST["local"];
 
 $comando = $pdo->prepare("INSERT INTO paciente (`data`, sexo, nome_hospital, nome_paciente, idade, rgcpf, telefone, `local`)VALUES('$data', '$sexo', '$hospital', '$paciente', $idade, '$doc', '$telefone', '$local')" );
     $resultado = $comando->execute();
+    
+    session_start();
 
-    $id = $pdo->lastInsertId();
-    header("Location: acompanhante.php?id=$id");
+    $_SESSION['id_paciente'] = $pdo->lastInsertId();
+    
+    header("Location: acompanhante.php");
 ?>
