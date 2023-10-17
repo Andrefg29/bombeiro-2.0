@@ -1,5 +1,15 @@
 <?php
+session_start();
 
+$id_paciente = $_SESSION['id_paciente'];
+$data = $_SESSION['data'];
+$sexo = $_SESSION['sexo'];
+$hospital = $_SESSION['hospital'];
+$paciente = $_SESSION['paciente'];
+$idade = $_SESSION['idade'];
+$doc = $_SESSION['doc'];
+$telefone = $_SESSION['telefone'];
+$local = $_SESSION['local'];
 
 ?>
 <!DOCTYPE html>
@@ -25,7 +35,7 @@
         </div>
         </div>
         <div class="cennav">
-            <div class="linha">DATA:&nbsp;&nbsp;<p>14/07/2023</p></div>
+            <div class="linha">DATA:&nbsp;&nbsp;<p>$data</p></div>
             <div class="linha">NOME:&nbsp;&nbsp;<p>Cleriton Sávio</p></div>
             <div class="linha">IDADE:&nbsp;&nbsp;<p>24</p></div>
             <div class="linha">SEXO:&nbsp;&nbsp;<p>M</p></div>
