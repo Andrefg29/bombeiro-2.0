@@ -14,6 +14,8 @@ $idade = $_SESSION['idade'];
 $doc = $_SESSION['doc'];
 $telefone = $_SESSION['telefone'];
 $local = $_SESSION['local'];
+$nome_acomp = $_SESSION['nome_acomp'];
+$idade_acomp = $_SESSION['idade_acomp'];
 
 ?>
 <!DOCTYPE html>
@@ -46,11 +48,11 @@ $local = $_SESSION['local'];
             <div class="linha">NOME DO HOSPITAL:&nbsp;&nbsp;<p><?php echo($hospital); ?></p></div>
         </div>
         <div class="dirnav">
-            <div class="linha">RG/CPF PACIENTE:&nbsp;&nbsp;<p>7.203.654</p></div>
-            <div class="linha">TELEFONE:&nbsp;&nbsp;<p>(47) 98816-1658</p></p></div>
-            <div class="linha">ACOMPANHANTE:&nbsp;&nbsp;<p>Maico Petis</p></div>
-            <div class="linha">IDADE:&nbsp;&nbsp;<p>18</p></p></div>
-            <div class="linha">LOCAL DA OCORRÊNCIA:&nbsp;&nbsp;<p>Quadra do Adolfo</p></div>
+            <div class="linha">RG/CPF PACIENTE:&nbsp;&nbsp;<p><?php echo($doc); ?></p></div>
+            <div class="linha">TELEFONE:&nbsp;&nbsp;<p><?php echo($telefone); ?></p></div>
+            <div class="linha">ACOMPANHANTE:&nbsp;&nbsp;<p><?php echo($nome_acomp); ?></p></div>
+            <div class="linha">IDADE:&nbsp;&nbsp;<p>18</p><?php echo($idade_acomp); ?></p></div>
+            <div class="linha">LOCAL DA OCORRÊNCIA:&nbsp;&nbsp;<p><?php echo($local); ?></p></div>
         </div>
         <div class="dado" onclick="dados();"><i class="fa-solid fa-caret-down"></i></div>
     </div>
@@ -58,18 +60,18 @@ $local = $_SESSION['local'];
     <div class="dadosos">
         
         <div class="cennav2">
-            <div class="linha">DATA:&nbsp;&nbsp;<p>14/07/2023</p></div>
-            <div class="linha">NOME:&nbsp;&nbsp;<p>Cleriton Sávio</p></div>
-            <div class="linha">IDADE:&nbsp;&nbsp;<p>24</p></div>
-            <div class="linha">SEXO:&nbsp;&nbsp;<p>M</p></div>
-            <div class="linha">NOME DO HOSPITAL:&nbsp;&nbsp;<p>Dona Helena</p></div>
+        <div class="linha">DATA:&nbsp;&nbsp;<p><?php echo($data); ?></p></div>
+            <div class="linha">NOME:&nbsp;&nbsp;<p><?php echo($paciente); ?></p></div>
+            <div class="linha">IDADE:&nbsp;&nbsp;<p><?php echo($idade); ?></p></div>
+            <div class="linha">SEXO:&nbsp;&nbsp;<p><?php echo($sexo); ?></p></div>
+            <div class="linha">NOME DO HOSPITAL:&nbsp;&nbsp;<p><?php echo($hospital); ?></p></div>
         </div>
         <div class="dirnav2">
-            <div class="linha">RG/CPF PACIENTE:&nbsp;&nbsp;<p>7.203.654</p></div>
-            <div class="linha">TELEFONE:&nbsp;&nbsp;<p>(47) 98816-1658</p></p></div>
-            <div class="linha">ACOMPANHANTE:&nbsp;&nbsp;<p>Maico Petis</p></div>
-            <div class="linha">IDADE:&nbsp;&nbsp;<p>18</p></p></div>
-            <div class="linha">LOCAL DA OCORRÊNCIA:&nbsp;&nbsp;<p>Quadra do Adolfo</p></div>
+        <div class="linha">RG/CPF PACIENTE:&nbsp;&nbsp;<p><?php echo($doc); ?></p></div>
+            <div class="linha">TELEFONE:&nbsp;&nbsp;<p><?php echo($telefone); ?></p></div>
+            <div class="linha">ACOMPANHANTE:&nbsp;&nbsp;<p><?php echo($nome_acomp); ?></p></div>
+            <div class="linha">IDADE:&nbsp;&nbsp;<p>18</p><?php echo($idade_acomp); ?></p></div>
+            <div class="linha">LOCAL DA OCORRÊNCIA:&nbsp;&nbsp;<p><?php echo($local); ?></p></div>
         </div>
     </div>
 </div>
