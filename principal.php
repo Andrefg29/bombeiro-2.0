@@ -3,13 +3,19 @@ session_start();
 
 $id_paciente = $_SESSION['id_paciente'];
 $data = $_SESSION['data'];
+$temp = explode("-",$data);
+$data = $temp[2] . "/" . $temp[1] . "/" . $temp[0];
 $sexo = $_SESSION['sexo'];
+if($sexo == 'masculino'){
+    $sexo = 'M';}else{ $sexo = 'F';}
 $hospital = $_SESSION['hospital'];
 $paciente = $_SESSION['paciente'];
 $idade = $_SESSION['idade'];
 $doc = $_SESSION['doc'];
 $telefone = $_SESSION['telefone'];
 $local = $_SESSION['local'];
+$nome_acomp = $_SESSION['nome_acomp'];
+$idade_acomp = $_SESSION['idade_acomp'];
 
 ?>
 <!DOCTYPE html>
@@ -35,18 +41,18 @@ $local = $_SESSION['local'];
         </div>
         </div>
         <div class="cennav">
-            <div class="linha">DATA:&nbsp;&nbsp;<p>$data</p></div>
-            <div class="linha">NOME:&nbsp;&nbsp;<p>Cleriton Sávio</p></div>
-            <div class="linha">IDADE:&nbsp;&nbsp;<p>24</p></div>
-            <div class="linha">SEXO:&nbsp;&nbsp;<p>M</p></div>
-            <div class="linha">NOME DO HOSPITAL:&nbsp;&nbsp;<p>Dona Helena</p></div>
+            <div class="linha">DATA:&nbsp;&nbsp;<p><?php echo($data); ?></p></div>
+            <div class="linha">NOME:&nbsp;&nbsp;<p><?php echo($paciente); ?></p></div>
+            <div class="linha">IDADE:&nbsp;&nbsp;<p><?php echo($idade); ?></p></div>
+            <div class="linha">SEXO:&nbsp;&nbsp;<p><?php echo($sexo); ?></p></div>
+            <div class="linha">NOME DO HOSPITAL:&nbsp;&nbsp;<p><?php echo($hospital); ?></p></div>
         </div>
         <div class="dirnav">
-            <div class="linha">RG/CPF PACIENTE:&nbsp;&nbsp;<p>7.203.654</p></div>
-            <div class="linha">TELEFONE:&nbsp;&nbsp;<p>(47) 98816-1658</p></p></div>
-            <div class="linha">ACOMPANHANTE:&nbsp;&nbsp;<p>Maico Petis</p></div>
-            <div class="linha">IDADE:&nbsp;&nbsp;<p>18</p></p></div>
-            <div class="linha">LOCAL DA OCORRÊNCIA:&nbsp;&nbsp;<p>Quadra do Adolfo</p></div>
+            <div class="linha">RG/CPF PACIENTE:&nbsp;&nbsp;<p><?php echo($doc); ?></p></div>
+            <div class="linha">TELEFONE:&nbsp;&nbsp;<p><?php echo($telefone); ?></p></div>
+            <div class="linha">ACOMPANHANTE:&nbsp;&nbsp;<p><?php echo($nome_acomp); ?></p></div>
+            <div class="linha">IDADE:&nbsp;&nbsp;<p>18</p><?php echo($idade_acomp); ?></p></div>
+            <div class="linha">LOCAL DA OCORRÊNCIA:&nbsp;&nbsp;<p><?php echo($local); ?></p></div>
         </div>
         <div class="dado" onclick="dados();"><i class="fa-solid fa-caret-down"></i></div>
     </div>
@@ -54,18 +60,18 @@ $local = $_SESSION['local'];
     <div class="dadosos">
         
         <div class="cennav2">
-            <div class="linha">DATA:&nbsp;&nbsp;<p>14/07/2023</p></div>
-            <div class="linha">NOME:&nbsp;&nbsp;<p>Cleriton Sávio</p></div>
-            <div class="linha">IDADE:&nbsp;&nbsp;<p>24</p></div>
-            <div class="linha">SEXO:&nbsp;&nbsp;<p>M</p></div>
-            <div class="linha">NOME DO HOSPITAL:&nbsp;&nbsp;<p>Dona Helena</p></div>
+        <div class="linha">DATA:&nbsp;&nbsp;<p><?php echo($data); ?></p></div>
+            <div class="linha">NOME:&nbsp;&nbsp;<p><?php echo($paciente); ?></p></div>
+            <div class="linha">IDADE:&nbsp;&nbsp;<p><?php echo($idade); ?></p></div>
+            <div class="linha">SEXO:&nbsp;&nbsp;<p><?php echo($sexo); ?></p></div>
+            <div class="linha">NOME DO HOSPITAL:&nbsp;&nbsp;<p><?php echo($hospital); ?></p></div>
         </div>
         <div class="dirnav2">
-            <div class="linha">RG/CPF PACIENTE:&nbsp;&nbsp;<p>7.203.654</p></div>
-            <div class="linha">TELEFONE:&nbsp;&nbsp;<p>(47) 98816-1658</p></p></div>
-            <div class="linha">ACOMPANHANTE:&nbsp;&nbsp;<p>Maico Petis</p></div>
-            <div class="linha">IDADE:&nbsp;&nbsp;<p>18</p></p></div>
-            <div class="linha">LOCAL DA OCORRÊNCIA:&nbsp;&nbsp;<p>Quadra do Adolfo</p></div>
+        <div class="linha">RG/CPF PACIENTE:&nbsp;&nbsp;<p><?php echo($doc); ?></p></div>
+            <div class="linha">TELEFONE:&nbsp;&nbsp;<p><?php echo($telefone); ?></p></div>
+            <div class="linha">ACOMPANHANTE:&nbsp;&nbsp;<p><?php echo($nome_acomp); ?></p></div>
+            <div class="linha">IDADE:&nbsp;&nbsp;<p>18</p><?php echo($idade_acomp); ?></p></div>
+            <div class="linha">LOCAL DA OCORRÊNCIA:&nbsp;&nbsp;<p><?php echo($local); ?></p></div>
         </div>
     </div>
 </div>
@@ -81,6 +87,7 @@ $local = $_SESSION['local'];
         <div class="abacima" onclick="abrir7();" id="aba7"><h3>Anamnese Gestacional:</h3><i class="fa-solid fa-chevron-right" id="seta7"></i></div>
         <div class="abacima" onclick="abrir8();" id="aba8"><h3>Decisão de Tranporte:</h3><i class="fa-solid fa-chevron-right" id="seta8"></i></div>
         <div class="abacima" onclick="abrir9();" id="aba9"><h3>Equipe de Atendimento:</h3><i class="fa-solid fa-chevron-right" id="seta9"></i></div>
+        <div class="abacima" onclick="abrir10();" id="aba10"><h3>Sinais Vitais:</h3><i class="fa-solid fa-chevron-right" id="seta9"></i></div>
     </div>
     
     <div class="iframes">
@@ -93,6 +100,7 @@ $local = $_SESSION['local'];
         <iframe src="anamnesegest.html" id="iframe7" width="100%" height="100%"></iframe>
         <iframe src="decisaodetransporte.html" id="iframe8" width="100%" height="100%"></iframe>
         <iframe src="equipe.html" id="iframe9" width="100%" height="100%"></iframe>
+        <iframe src="sinaisvitais.html" id="iframe10" width="100%" height="100%"></iframe>
     </div>
 </div>
 
@@ -119,6 +127,8 @@ $local = $_SESSION['local'];
     var aba8 = document.getElementById('aba8');
     var iframe9 = document.getElementById('iframe9');
     var aba9 = document.getElementById('aba9');
+    var iframe10 = document.getElementById('iframe10');
+    var aba10 = document.getElementById('aba10');
 
 
     function dados(){
@@ -148,6 +158,8 @@ $local = $_SESSION['local'];
        iframe8.style.display = 'none';
        aba9.classList.remove('active');
        iframe9.style.display = 'none';
+       aba10.classList.remove('active');
+       iframe10.style.display = 'none';
     }
 
     function abrir2(){
@@ -163,12 +175,14 @@ $local = $_SESSION['local'];
        iframe4.style.display = 'none';
        aba6.classList.remove('active');
        aba7.classList.remove('active');
-iframe6.style.display = 'none';
+        iframe6.style.display = 'none';
        iframe7.style.display = 'none';
        aba8.classList.remove('active');
        iframe8.style.display = 'none';
        aba9.classList.remove('active');
        iframe9.style.display = 'none';
+       aba10.classList.remove('active');
+       iframe10.style.display = 'none';
     }
 
     function abrir3(){
@@ -190,6 +204,8 @@ iframe6.style.display = 'none';
        iframe8.style.display = 'none';
        aba9.classList.remove('active');
        iframe9.style.display = 'none';
+       aba10.classList.remove('active');
+       iframe10.style.display = 'none';
     }
 
     function abrir4(){
@@ -211,6 +227,8 @@ iframe6.style.display = 'none';
        iframe8.style.display = 'none';
        aba9.classList.remove('active');
        iframe9.style.display = 'none';
+       aba10.classList.remove('active');
+       iframe10.style.display = 'none';
     }
 
     function abrir5(){
@@ -232,6 +250,8 @@ iframe6.style.display = 'none';
        iframe8.style.display = 'none';
        aba9.classList.remove('active');
        iframe9.style.display = 'none';
+       aba10.classList.remove('active');
+       iframe10.style.display = 'none';
     }
 
     function abrir6(){
@@ -253,6 +273,8 @@ iframe6.style.display = 'none';
        iframe8.style.display = 'none';
        aba9.classList.remove('active');
        iframe9.style.display = 'none';
+       aba10.classList.remove('active');
+       iframe10.style.display = 'none';
     }
 
     function abrir7(){
@@ -274,6 +296,8 @@ iframe6.style.display = 'none';
        iframe8.style.display = 'none';
        aba9.classList.remove('active');
        iframe9.style.display = 'none';
+       aba10.classList.remove('active');
+       iframe10.style.display = 'none';
     }
 
     function abrir8(){
@@ -295,6 +319,8 @@ iframe6.style.display = 'none';
        iframe8.style.display = 'block';
        aba9.classList.remove('active');
        iframe9.style.display = 'none';
+       aba10.classList.remove('active');
+       iframe10.style.display = 'none';
     }
 
     function abrir9(){
@@ -316,6 +342,31 @@ iframe6.style.display = 'none';
        iframe8.style.display = 'none';
        aba9.classList.add('active');
        iframe9.style.display = 'block';
+       aba10.classList.remove('active');
+       iframe10.style.display = 'none';
+    }
+
+    function abrir10(){
+       aba5.classList.remove('active');
+       aba1.classList.remove('active');
+       aba2.classList.remove('active');
+       aba3.classList.remove('active');
+       aba4.classList.remove('active');
+       iframe5.style.display = 'none';
+       iframe1.style.display = 'none';
+       iframe2.style.display = 'none';
+       iframe3.style.display = 'none';
+       iframe4.style.display = 'none';
+       aba6.classList.remove('active');
+       aba7.classList.remove('active');
+       iframe6.style.display = 'none';
+       iframe7.style.display = 'none';
+       aba8.classList.remove('active');
+       iframe8.style.display = 'none';
+       aba9.classList.remove('active');
+       iframe9.style.display = 'none';
+       aba10.classList.add('active');
+       iframe10.style.display = 'block';
     }
 
 </script>
