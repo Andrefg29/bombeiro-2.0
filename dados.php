@@ -1,5 +1,5 @@
 <?php 
-include("conecta.php");
+
 $data = $_POST["data"];
 $sexo = $_POST["sexo"];
 $hospital = $_POST["hospital"];
@@ -9,6 +9,8 @@ $doc = $_POST["doc"];
 $telefone = $_POST["telefone"];
 $local = $_POST["local"];  
 
+
+include_once("conecta.php");
 $comando = $pdo->prepare("INSERT INTO paciente (`data`, sexo, nome_hospital, nome_paciente, idade, rgcpf, telefone, `local`)VALUES('$data', '$sexo', '$hospital', '$paciente', $idade, '$doc', '$telefone', '$local')" );
     $resultado = $comando->execute();
     
@@ -24,5 +26,6 @@ $comando = $pdo->prepare("INSERT INTO paciente (`data`, sexo, nome_hospital, nom
     $_SESSION['telefone'] = $telefone;
     $_SESSION['local'] = $local;
     
-    header("Location: acompanhante.php");
+    // header("Location: acompanhante.php"); 
+    
 ?>
