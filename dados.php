@@ -26,6 +26,6 @@ $comando = $pdo->prepare("INSERT INTO paciente (`data`, sexo, nome_hospital, nom
     $_SESSION['telefone'] = $telefone;
     $_SESSION['local'] = $local;
     
-    // header("Location: acompanhante.php"); 
+    header("Location: acompanhante.php"); 
     
 ?>

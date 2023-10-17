@@ -51,7 +51,7 @@ $idade_acomp = $_SESSION['idade_acomp'];
             <div class="linha">RG/CPF PACIENTE:&nbsp;&nbsp;<p><?php echo($doc); ?></p></div>
             <div class="linha">TELEFONE:&nbsp;&nbsp;<p><?php echo($telefone); ?></p></div>
             <div class="linha">ACOMPANHANTE:&nbsp;&nbsp;<p><?php echo($nome_acomp); ?></p></div>
-            <div class="linha">IDADE:&nbsp;&nbsp;<p>18</p><?php echo($idade_acomp); ?></p></div>
+            <div class="linha">IDADE:&nbsp;&nbsp;<p><?php echo($idade_acomp); ?></p></div>
             <div class="linha">LOCAL DA OCORRÊNCIA:&nbsp;&nbsp;<p><?php echo($local); ?></p></div>
         </div>
         <div class="dado" onclick="dados();"><i class="fa-solid fa-caret-down"></i></div>
@@ -70,7 +70,7 @@ $idade_acomp = $_SESSION['idade_acomp'];
         <div class="linha">RG/CPF PACIENTE:&nbsp;&nbsp;<p><?php echo($doc); ?></p></div>
             <div class="linha">TELEFONE:&nbsp;&nbsp;<p><?php echo($telefone); ?></p></div>
             <div class="linha">ACOMPANHANTE:&nbsp;&nbsp;<p><?php echo($nome_acomp); ?></p></div>
-            <div class="linha">IDADE:&nbsp;&nbsp;<p>18</p><?php echo($idade_acomp); ?></p></div>
+            <div class="linha">IDADE:&nbsp;&nbsp;<p><?php echo($idade_acomp); ?></p></div>
             <div class="linha">LOCAL DA OCORRÊNCIA:&nbsp;&nbsp;<p><?php echo($local); ?></p></div>
         </div>
     </div>
