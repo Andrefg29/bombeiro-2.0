@@ -1,5 +1,7 @@
 <?php 
 
+include("conecta.php");
+
 $op1 = "No";
 $op2 = $_POST["op2"];
 $op3 = $_POST["op3"];
@@ -10,13 +12,14 @@ $op6 = $_POST["op6"];
     if(isset($_POST["op1"])){
         $op1 = "Sim";}
     
-include("conecta.php");
+        session_start();
+        $id_paciente = $_SESSION['id_paciente'];
 
 
 $dados = [];  // Variável usada para guardar os dados acima no formato JSON.
 
 
-$comando = $pdo->prepare("INSERT INTO problemas(Psiquiatrico, Obstetrico, Respiratorio, Transporte, Diabetes, Outro)VALUES('$op1','$op2', '$op3', '$op4', '$op5', '$op6')" );
+$comando = $pdo->prepare("INSERT INTO problemas (id_paciente, Psiquiatrico, Obstetrico, Respiratorio, Transporte, Diabetes, Outro)VALUES($id_paciente,'$op1','$op2', '$op3', '$op4', '$op5', '$op6')" );
     $resultado = $comando->execute();
 // O trecho abaixo pode estar dentro de um WHILE para guardar a resposta de um SELECT por exemplo
 // Neste exemplo estamos apenas devolvendo o que o usuário digitou no formulário
