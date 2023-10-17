@@ -19,7 +19,7 @@ include('conecta.php');
     }
     }
     if(isset($_POST["cadastro"])){
-        header("Location: principal.html");}
+        header("Location: principal.php");}
 
 ?>
 

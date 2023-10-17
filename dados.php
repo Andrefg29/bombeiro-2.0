@@ -18,6 +18,13 @@ $comando = $pdo->prepare("INSERT INTO paciente (`data`, sexo, nome_hospital, nom
     session_start();
 
     $_SESSION['id_paciente'] = $pdo->lastInsertId();
+    $_SESSION['data'] = $pdo->lastInsertId()
+    $_SESSION['sexo'] = $pdo->lastInsertId()
+    $_SESSION['hospital'] = $pdo->lastInsertId()
+    $_SESSION['paciente'] = $pdo->lastInsertId()
+    $_SESSION['idade'] = $pdo->lastInsertId()
+    $_SESSION['doc'] = $pdo->lastInsertId()
+    $_SESSION['telefone'] = $pdo->lastInsertId()
     
     header("Location: acompanhante.php");
 ?>

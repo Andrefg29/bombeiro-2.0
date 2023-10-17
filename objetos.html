@@ -9,7 +9,16 @@
     <link rel="icon" type="image/png" href="image/logo_noar.png">
     <link rel="stylesheet" href="css/janelas.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
-</head>
+    <style>
+      .caixaresp{
+        height: 600px;
+      }
+
+      .d1{
+        justify-content: flex-start;
+      }
+    </style>
+  </head>
 
 <body>
 
@@ -18,8 +27,8 @@
             <div class="separa">
                 <div class="d1">
                         <h3>Digite os Objetos:</h3>
-                        <div class=""><input type="text" id="mensagem" required="required" placeholder="Digite Aqui um Objeto"></div> 
-                        <button onclick="Enviar();">&#187;</button>
+                        <div class="pesquisa"><input type="text" id="mensagem" required="required" placeholder="Digite Aqui um Objeto"><button onclick="Enviar();" class="button">&#187;</button></div> 
+                        
                         </div>
 
                 <div class="d2">

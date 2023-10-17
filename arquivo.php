@@ -2,7 +2,7 @@
 
 include("conecta.php");
 
-$op1 = "No";
+$op1 = "Não";
 $op2 = $_POST["op2"];
 $op3 = $_POST["op3"];
 $op4 = $_POST["op4"];
@@ -18,8 +18,15 @@ $op6 = $_POST["op6"];
 
 $dados = [];  // Variável usada para guardar os dados acima no formato JSON.
 
+$comando = $pdo->prepare("SELECT * FROM problemas WHERE id_paciente = $id_paciente");
+    $resultado = $comando->execute();
 
-$comando = $pdo->prepare("INSERT INTO problemas (id_paciente, Psiquiatrico, Obstetrico, Respiratorio, Transporte, Diabetes, Outro)VALUES($id_paciente,'$op1','$op2', '$op3', '$op4', '$op5', '$op6')" );
+if($comando->rowCount()){
+    $comando = $pdo->prepare("UPDATE problemas SET Psiquiatrico = '$op1', Obstetrico = '$op2', Respiratorio = '$op3', Transporte = '$op4', Diabetes = '$op5', Outro = '$op6' WHERE id_paciente = $id_paciente");}
+    else{
+        $comando = $pdo->prepare("INSERT INTO problemas (id_paciente, Psiquiatrico, Obstetrico, Respiratorio, Transporte, Diabetes, Outro)VALUES($id_paciente,'$op1','$op2', '$op3', '$op4', '$op5', '$op6')" );
+    }
+
     $resultado = $comando->execute();
 // O trecho abaixo pode estar dentro de um WHILE para guardar a resposta de um SELECT por exemplo
 // Neste exemplo estamos apenas devolvendo o que o usuário digitou no formulário
