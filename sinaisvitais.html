@@ -11,9 +11,16 @@
     <script src="jquery-1.8.2.min.js"></script>
     <script src="https://kit.fontawesome.com/f87260a7c7.js" crossorigin="anonymous"></script>
     <style>
-        .d1, .d3
-        {
+        .d1,
+        .d3 {
             width: 50%;
+        }
+
+        input.pressao {
+            width: 13%;
+        }
+        input.pressao1{
+            width: 30%;
         }
     </style>
 </head>
@@ -77,230 +84,107 @@
 
                     <label class="agrupamento2">
                         <div class="titulo">
-                            <p>Período de Gestação:</p>
+                            <p>Pressão Arterial:</p>
                         </div>
                         <div class="arruma2">
-                            <input type="number" name="cep"  > - <input type="number" name="cep2"  >
+                            <input type="number" name="cep" class="pressao" placeholder="mmHg"> X <input type="number"
+                                name="cep2" class="pressao" placeholder="mmHg">
+                        </div>
+                    </label><br>
+
+                    <label class="agrupamento2">
+                        <div class="titulo">
+                            <p>Pulso:</p>
+                        </div>
+                        <div class="arruma2">
+                            <input type="number" placeholder="B.C.P.M." name="op1" class="pressao1">
+                        </div>
+                    </label><br>
+
+
+            
+                    <label class="agrupamento2">
+                        <div class="titulo">
+                            <p>Temperatura:</p>
+                        </div>
+                        <div class="arruma2">
+                            <input type="number" placeholder="Digite Aqui" name="op1" class="pressao1" >°C
                         </div>
                     </label><br>
 
                     <label  class="agrupamento2">
                         <div class="titulo">
-                            <p>Existe Possibilidade de Complicações?</p>
+                            <p>Perfusão:</p>
                         </div>
                         <div class="arruma4">
                             <label class="agrupamento">
                                 <input type="checkbox" id="op3" name="op3" value="Opção 3">
                                 <span class="checkmark"></span>
-                                <div class="texto1">Sim</div>
+                                <div class="texto1">>2 Seg</div>
                             </label> <label class="agrupamento">
                                 <input type="checkbox" id="op4" name="op4" value="Opção 4">
                                 <span class="checkmark"></span>
-                                <div class="texto1">Não</div>
+                                <div class="texto1"> < 2 Seg </div>
                             </label><br>
                         </div>
                     </label><br>
-
-
-                    <label  class="agrupamento2">
-                        <div class="titulo">
-                            <p>Primeiro Filho?</p>
-                        </div>
-                        <div class="arruma4">
-                            <label class="agrupamento">
-                                <input type="checkbox" id="op5" name="op5" value="Opção 5">
-                                <span class="checkmark"></span>
-                                <div class="texto1">Sim</div>
-                            </label> <label class="agrupamento">
-                                <input type="checkbox" id="op6" name="op6" value="Opção 6">
-                                <span class="checkmark"></span>
-                                <div class="texto1">Não</div>
-                            </label><br>
-                        </div>
-                    </label><br>
-
-                    <label  class="agrupamento2">
-                        <div class="titulo">
-                            <p>Sente Pressão Na Região do Quadril Ou Vontade de Evacuar?</p>
-                        </div>
-                        <div class="arruma4">
-                            <label class="agrupamento">
-                                <input type="checkbox" id="op7" name="op7" value="Opção 7">
-                                <span class="checkmark"></span>
-                                <div class="texto1">Sim</div>
-                            </label> <label class="agrupamento">
-                                <input type="checkbox" id="op8" name="op8" value="Opção 8">
-                                <span class="checkmark"></span>
-                                <div class="texto1">Não</div>
-                            </label><br>
-                        </div><br>
-
-                    </label><br>
-                        <label class="agrupamento2">
-                            <div class="titulo">
-                                <p>Que Horas Iniciaram as Contrações?</p>
-                            </div>
-                            <div class="arruma2">
-                                <input type="time" placeholder="(Digite Aqui)" name="op1">
-                            </div>
-                        </label><br>
-
-                        <label  class="agrupamento2">
-                            <div class="titulo">
-                                <p>Foi Feito Inspeção Visual?</p>
-                            </div>
-                            <div class="arruma4">
-                                <label class="agrupamento">
-                                    <input type="checkbox" id="op11" name="op11" value="Opção 11">
-                                    <span class="checkmark"></span>
-                                    <div class="texto1">Sim</div>
-                                </label> <label class="agrupamento">
-                                    <input type="checkbox" id="op12" name="op12" value="Opção 12">
-                                    <span class="checkmark"></span>
-                                    <div class="texto1">Não</div>
-                                </label><br>
-                            </div><br>
-                        </label><br>
-
-                        <label class="agrupamento2">
-                            <div class="titulo">
-                                <p>Horário de Nascimento?</p>
-                            </div>
-                            <div class="arruma2">
-                                <input type="time" placeholder="(Digite Aqui)" name="op1">
-                            </div>
-                        </label><br>
-
-                        <label class="agrupamento2">
-                            <div class="titulo">
-                                <p>Nome do Bebê:</p>
-                            </div>
-                            <div class="arruma2">
-                                <input type="text" placeholder="Digite Aqui" name="op6">
-    
-                            </div>
-                        </label><br>
-                    
-
-                    
-                </div>
-
-
-                <div class="d2">
 
                 </div>
+            
 
-                <div class="d3">
-                    <label class="agrupamento2">
-                        <div class="titulo">
-                            <p>Nome do Médico:</p>
-                        </div>
-                        <div class="arruma2">
-                            <input type="text" placeholder="Digite Aqui" name="op6">
 
-                        </div>
-                    </label><br>
 
-                    <label  class="agrupamento2">
-                        <div class="titulo">
-                            <p>Fez Pré-Natal?</p>
-                        </div>
-                        <div class="arruma4">
-                            <label class="agrupamento">
-                                <input type="checkbox" id="op1" name="op1" value="Opção 1">
-                                <span class="checkmark"></span>
-                                <div class="texto1">Sim</div>
-                            </label> <label  class="agrupamento">
-                                <input type="checkbox" id="op2" name="op2" value="Opção 2">
-                                <span class="checkmark"></span>
-                                <div class="texto1">Não</div>
-                            </label><br>
-                        </div>
-                    </label><br>
+            <div class="d3">
+                <label class="agrupamento2">
+                    <div class="titulo">
+                        <p>Saturação:</p>
+                    </div>
+                    <div class="arruma2">
+                        <input type="number" placeholder="Digite Aqui" name="op6" class="pressao1"> %
 
-                    <label class="agrupamento2">
-                        <div class="titulo">
-                            <p>Quantos Filhos:</p>
-                        </div>
-                        <div class="arruma2">
-                            <input type="number" placeholder="(Digite Aqui)" name="op1">
-                        </div>
-                    </label><br>
-                    
-                    <label  class="agrupamento2">
-                        <div class="titulo">
-                            <p>Houve Ruptura da Bolsa?</p>
-                        </div>
-                        <div class="arruma4">
-                            <label  class="agrupamento">
-                                <input type="checkbox" id="op9" name="op9" value="Opção 9">
-                                <span class="checkmark"></span>
-                                <div class="texto1">Sim</div>
-                            </label> <label  class="agrupamento">
-                                <input type="checkbox" id="op10" name="op10" value="Opção 10">
-                                <span class="checkmark"></span>
-                                <div class="texto1">Não</div>
-                            </label><br><br>
-                        </div>
+                    </div>
+                </label><br>
 
-                        <label class="agrupamento2">
-                            <div class="titulo">
-                                <p>Tempo das contrações: Duração:</p>
-                            </div>
-                            <div class="arruma2">
-                                <input type="time" placeholder="(Digite Aqui)" name="op1">
-                            </div>
-                        </label><br>
-                        <label class="agrupamento2">
-                            <div class="titulo">
-                                <p>Tempo das contrações: Intervalo:</p>
-                            </div>
-                            <div class="arruma2">
-                                <input type="number" placeholder="(Em Segundos)" name="op1">
-                            </div>
-                        </label><br>
+                <label class="agrupamento2">
+                    <div class="titulo">
+                        <p>Respiração:</p>
+                    </div>
+                    <div class="arruma2">
+                        <input type="number" placeholder="M.R.M." name="op1" class="pressao1">
+                    </div>
+                </label><br>
 
-                        <label  class="agrupamento2">
-                            <div class="titulo">
-                                <p>Parto Realizado?</p>
-                            </div>
-                            <div class="arruma4">
-                                <label class="agrupamento">
-                                    <input type="checkbox" id="op11" name="op11" value="Opção 11">
-                                    <span class="checkmark"></span>
-                                    <div class="texto1">Sim</div>
-                                </label> <label class="agrupamento">
-                                    <input type="checkbox" id="op12" name="op12" value="Opção 12">
-                                    <span class="checkmark"></span>
-                                    <div class="texto1">Não</div>
-                                </label><br>
-                            </div><br>
-    
-                        </label><br>
-                        <label  class="agrupamento2">
-                            <div class="titulo">
-                                <p>Sexo do Bebê</p>
-                            </div>
-                            <div class="arruma4">
-                                <label class="agrupamento">
-                                    <input type="checkbox" id="op11" name="op11" value="Opção 11">
-                                    <span class="checkmark"></span>
-                                    <div class="texto1">Fem</div>
-                                </label> <label class="agrupamento">
-                                    <input type="checkbox" id="op12" name="op12" value="Opção 12">
-                                    <span class="checkmark"></span>
-                                    <div class="texto1">Mas</div>
-                                </label><br>
-                            </div><br>
-    
-                        </label><br>
-                        
-                </div>
+                <label class="agrupamento2">
+                    <div class="titulo">
+                        <p>HGT:</p>
+                    </div>
+                    <div class="arruma2">
+                        <input type="number" placeholder="mg" name="op1" class="pressao1">
+                    </div>
+                </label><br>
                 <br>
-                <div class="separa_btn">
-                    <input type="button" value="Enviar" class="btn" onclick="Listar();">
-                    <input type="reset" value="Limpar" class="btn">
-                </div>
+                <label  class="agrupamento2">
+                    <div class="arruma4">
+                        <label class="agrupamento">
+                            <input type="checkbox" id="op12" name="op12" value="Opção 12">
+                            <span class="checkmark"></span>
+                            <div class="texto1">Anormal</div>
+                        </label> <label class="agrupamento">
+                            <input type="checkbox" id="op14" name="op14" value="Opção 14">
+                            <span class="checkmark"></span>
+                            <div class="texto1">Normal</div>
+                        </label><br>
+                    </div>
+                </label><br>
+
+                    
+
+            </div>
+            <br>
+            <div class="separa_btn">
+                <input type="button" value="Enviar" class="btn" onclick="Listar();">
+                <input type="reset" value="Limpar" class="btn">
+            </div>
         </form>
     </div>
     <div class="loading" id="carregare"><span class="carregamento"></span></div>
