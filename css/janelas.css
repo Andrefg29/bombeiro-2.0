@@ -24,7 +24,7 @@ body {
 .texto {
     color: #000;
     border-bottom: 2px solid rgb(86, 18, 18);
-    width: 100%;
+    width: 98%;
     display: flex;
     justify-content: center;
     align-items: center;
