@@ -8,7 +8,7 @@
     <title>Atendimento de Ocorrências</title>
     <link rel="icon" type="image/png" href="image/logo_noar.png">
     <link rel="stylesheet" href="css/janelas.css">
-  </head>
+</head>
 
 <body>
 
@@ -19,66 +19,73 @@
         <form action="" method="post" class="form" id="form1">
             <div class="separa">
                 <div class="d1">
-                        <h3>Maiores de 5 anos:</h3>
-                        
-                        <label for="op6" class="agrupamento2">
-                            <div class="titulo">
-                                <p>Abertura Ocular</p>
-                            </div>
-                            <div class="arruma2">
-                                <input type="range" min="1" max="4" name="op6">
-                            </div>
-                        </label><br>
+                    <h3>Maiores de 5 anos:</h3>
 
-                        <label for="op7" class="agrupamento2">
-                            <div class="titulo">
-                                <p>Resposta Verbal</p>
-                            </div>
-                            <div class="arruma2">
-                                <input type="range" min="1" max="5" name="op7">
-                            </div>
-                        </label><br>
+                    <label for="op6" class="agrupamento2">
+                        <div class="titulo">
+                            <p>Abertura Ocular</p>
+                        </div>
+                        <div class="arruma2">
+                            <input type="range" min="1" max="4" name="op6" onmousemove="rangeSlider(this.value)">
+                            <br>
+                            <span id="rangeValue">Nenhuma</span>
+                        </div>
+                    </label><br>
 
-                        <label for="op8" class="agrupamento2">
-                            <div class="titulo">
-                                <p>Resposta Motora</p>
-                            </div>
-                            <div class="arruma2">
-                                <input type="range" min="1" max="6" name="op8">
-                            </div>
-                        </label><br>
+                    <label for="op7" class="agrupamento2">
+                        <div class="titulo">
+                            <p>Resposta Verbal</p>
+                        </div>
+                        <div class="arruma2">
+                            <input type="range" min="1" max="5" name="op7" onmousemove="rangeSlider2(this.value)" >
+                            <span id="rangeValue2">Nenhuma</span>
+                        </div>
+                    </label><br>
+
+                    <label for="op8" class="agrupamento2">
+                        <div class="titulo">
+                            <p>Resposta Motora</p>
+                        </div>
+                        <div class="arruma2">
+                            <input type="range" min="1" max="6" name="op8" onmousemove="rangeSlider3(this.value)">
+                            <span id="rangeValue3">Nenhuma</span>
+                        </div>
+                    </label><br>
                 </div>
 
                 <div class="d2">
-                        <h3>Menores de 5 anos:</h3> 
-                       
-                        <label for="op6" class="agrupamento2">
-                            <div class="titulo">
-                                <p>Abertura Ocular</p>
-                            </div>
-                            <div class="arruma2">
-                                <input type="range" min="1" max="4" name="op6">
-                            </div>
-                        </label><br>
+                    <h3>Menores de 5 anos:</h3>
 
-                        <label for="op7" class="agrupamento2">
-                            <div class="titulo">
-                                <p>Resposta Verbal</p>
-                            </div>
-                            <div class="arruma2">
-                                <input type="range" min="1" max="5" name="op7">
-                            </div>
-                        </label><br>
+                    <label for="op6" class="agrupamento2">
+                        <div class="titulo">
+                            <p>Abertura Ocular</p>
+                        </div>
+                        <div class="arruma2">
+                            <input type="range" min="1" max="4" name="op6" onmousemove="rangeSlider4(this.value)">
+                            <span id="rangeValue4">Nenhuma</span>
+                        </div>
+                    </label><br>
 
-                        <label for="op8" class="agrupamento2">
-                            <div class="titulo">
-                                <p>Resposta Motora</p>
-                            </div>
-                            <div class="arruma2">
-                                <input type="range" min="1" max="6" name="op8">
-                            </div>
-                        </label><br>
-                    
+                    <label for="op7" class="agrupamento2">
+                        <div class="titulo">
+                            <p>Resposta Verbal</p>
+                        </div>
+                        <div class="arruma2">
+                            <input type="range" min="1" max="5" name="op7" onmousemove="rangeSlider5(this.value)">
+                            <span id="rangeValue5">Nenhuma</span>
+                        </div>
+                    </label><br>
+
+                    <label for="op8" class="agrupamento2">
+                        <div class="titulo">
+                            <p>Resposta Motora</p>
+                        </div>
+                        <div class="arruma2">
+                            <input type="range" min="1" max="6" name="op8" onmousemove="rangeSlider6(this.value)">
+                            <span id="rangeValue6">Ausência</span>
+                        </div>
+                    </label><br>
+
                 </div>
             </div>
             <br>
@@ -89,4 +96,143 @@
         </form>
     </div>
 </body>
+<script>
+    function rangeSlider(value) {
+        document.getElementById('rangeValue').innerHTML = value;
+
+        if (document.getElementById('rangeValue').innerHTML == "1") {
+            document.getElementById('rangeValue').innerHTML = "Nenhuma";
+        }
+        if 
+             (document.getElementById('rangeValue').innerHTML == "2") {
+                document.getElementById('rangeValue').innerHTML = "Estímulo Doloroso";
+            } 
+                if (document.getElementById('rangeValue').innerHTML == "3") {
+                    document.getElementById('rangeValue').innerHTML = "Comando Verbal";
+                } 
+                    if (document.getElementById('rangeValue').innerHTML == "4") {
+                        document.getElementById('rangeValue').innerHTML = "Espontânea";
+                    }
+    }
+
+    function rangeSlider4(value) {
+        document.getElementById('rangeValue4').innerHTML = value;
+
+        if (document.getElementById('rangeValue4').innerHTML == "1") {
+            document.getElementById('rangeValue4').innerHTML = "Nenhuma";
+        }
+        if 
+             (document.getElementById('rangeValue4').innerHTML == "2") {
+                document.getElementById('rangeValue4').innerHTML = "Estímulo Doloroso";
+            } 
+                if (document.getElementById('rangeValue4').innerHTML == "3") {
+                    document.getElementById('rangeValue4').innerHTML = "Comando Verbal";
+                } 
+                    if (document.getElementById('rangeValue4').innerHTML == "4") {
+                        document.getElementById('rangeValue4').innerHTML = "Espontânea";
+                    }
+    }
+
+    function rangeSlider2(value) {
+        document.getElementById('rangeValue2').innerHTML = value;
+
+        if (document.getElementById('rangeValue2').innerHTML == "1") {
+            document.getElementById('rangeValue2').innerHTML = "Nenhuma";
+        }
+        if 
+             (document.getElementById('rangeValue2').innerHTML == "2") {
+                document.getElementById('rangeValue2').innerHTML = "Palavras Incompreensíveis";
+            } 
+                if (document.getElementById('rangeValue2').innerHTML == "3") {
+                    document.getElementById('rangeValue2').innerHTML = "Palavras Inapropriadas";
+                } 
+                    if (document.getElementById('rangeValue2').innerHTML == "4") {
+                        document.getElementById('rangeValue2').innerHTML = "Confuso";
+                    }
+
+                    if (document.getElementById('rangeValue2').innerHTML == "5") {
+                        document.getElementById('rangeValue2').innerHTML = "Orientado";
+                    }
+    }
+
+    function rangeSlider5(value) {
+        document.getElementById('rangeValue5').innerHTML = value;
+
+        if (document.getElementById('rangeValue5').innerHTML == "1") {
+            document.getElementById('rangeValue5').innerHTML = "Nenhuma";
+        }
+        if 
+             (document.getElementById('rangeValue5').innerHTML == "2") {
+                document.getElementById('rangeValue5').innerHTML = "Sons Incompreensíveis";
+            } 
+                if (document.getElementById('rangeValue5').innerHTML == "3") {
+                    document.getElementById('rangeValue5').innerHTML = "Choro Persistente ou Gritos";
+                } 
+                    if (document.getElementById('rangeValue5').innerHTML == "4") {
+                        document.getElementById('rangeValue5').innerHTML = "Palavras Inapropriadas";
+                    }
+
+                    if (document.getElementById('rangeValue5').innerHTML == "5") {
+                        document.getElementById('rangeValue5').innerHTML = "Palavras e Frases Propriadas";
+                    }
+    }
+
+    function rangeSlider3(value) {
+        document.getElementById('rangeValue3').innerHTML = value;
+
+        if (document.getElementById('rangeValue3').innerHTML == "1") {
+            document.getElementById('rangeValue3').innerHTML = "Nenhuma";
+        }
+        if 
+             (document.getElementById('rangeValue3').innerHTML == "2") {
+                document.getElementById('rangeValue3').innerHTML = "Extensão Anormal";
+            } 
+                if (document.getElementById('rangeValue3').innerHTML == "3") {
+                    document.getElementById('rangeValue3').innerHTML = "Flexão Anormal";
+                } 
+                    if (document.getElementById('rangeValue3').innerHTML == "4") {
+                        document.getElementById('rangeValue3').innerHTML = "Movimento de Retirada";
+                    }
+
+                    if (document.getElementById('rangeValue3').innerHTML == "5") {
+                        document.getElementById('rangeValue3').innerHTML = "Localiza a Dor";
+                    }
+
+                    if (document.getElementById('rangeValue3').innerHTML == "6") {
+                        document.getElementById('rangeValue3').innerHTML = "Obedece os Comandos";
+                    }
+    }
+
+    function rangeSlider6(value) {
+        document.getElementById('rangeValue6').innerHTML = value;
+
+        if (document.getElementById('rangeValue6').innerHTML == "1") {
+            document.getElementById('rangeValue6').innerHTML = "Ausência (Paralisia Flácida, Hipotômia)";
+        }
+        if 
+             (document.getElementById('rangeValue6').innerHTML == "2") {
+                document.getElementById('rangeValue6').innerHTML = "Extensão Anormal (Decerebração)";
+            } 
+                if (document.getElementById('rangeValue6').innerHTML == "3") {
+                    document.getElementById('rangeValue6').innerHTML = "Flexão Anormal (Decorticação)";
+                } 
+                    if (document.getElementById('rangeValue6').innerHTML == "4") {
+                        document.getElementById('rangeValue6').innerHTML = "Retirada do Segmento Estimulado";
+                    }
+
+                    if (document.getElementById('rangeValue6').innerHTML == "5") {
+                        document.getElementById('rangeValue6').innerHTML = "Localiza a Dor ou Estímulo Tátil";
+                    }
+
+                    if (document.getElementById('rangeValue6').innerHTML == "6") {
+                        document.getElementById('rangeValue6').innerHTML = "Obedece Prontamente";
+                    }
+    }
+
+            
+        
+
+
+</script>
+
 </html>

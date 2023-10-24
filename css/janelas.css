@@ -125,7 +125,7 @@ h2 {
     opacity: 0;
     cursor: pointer;
     height: 0;
-    width: 0;
+    width: 0; 
     display: none;
 }
 
@@ -368,68 +368,27 @@ input[type="range"] {
      background: transparent;
      cursor: pointer;
      width: 15rem;
+     background: linear-gradient(90deg, rgb(245, 68, 68) 0%, rgb(54, 212, 83) 100%);
+     border-radius: 0.5rem;
+     height: 1rem;
  }
+
  
- /* Removes default focus */
- input[type="range"]:focus {
-   outline: none;
- }
- 
- /***** Chrome, Safari, Opera and Edge Chromium styles *****/
- /* slider track */
- input[type="range"]::-webkit-slider-runnable-track {
-    background: rgb(251,41,41);
-    background: linear-gradient(90deg, rgba(251,41,41,1) 0%, rgba(230,226,66,1) 50%, rgba(55,203,80,1) 100%);
-    border-radius: 0.5rem;
-    height: 1rem;  
- }
- 
- /* slider thumb */
  input[type="range"]::-webkit-slider-thumb {
    -webkit-appearance: none; 
     appearance: none;
-    margin-top: -30px; 
-    content: '\27A4';
-    color: #fff;
-    border-radius: 15px 15px 30px 30px;
-    background-color: #0b1618;
-    height: 2rem;
-    width: 1rem;
-    font-size: 20px;
- }
- 
- input[type="range"]::-webkit-slider-thumb::after{
-    content: '\27A4';
-    color: #fff;
+    background-color: #ffffff;
+    border: 3px solid #000;
+    height: 1.5rem;
+    border-radius: 2rem 2rem 2rem .25rem;
+    transform: rotate(-45deg);
+    width: 1.5rem;
+    margin-top: -30px;
  }
 
- input[type="range"]:focus::-webkit-slider-thumb {   
-   border: 1px solid #053a5f;
-   outline: 3px solid #053a5f;
-   outline-offset: 0.125rem; 
- }
- 
- /******** Firefox styles ********/
- /* slider track */
- input[type="range"]::-moz-range-track {
-    background-color: #053a5f;
-    border-radius: 0.5rem;
-    height: 0.5rem;
- }
- 
- /* slider thumb */
- input[type="range"]::-moz-range-thumb {
-    border: none; /*Removes extra border that FF applies*/
-    border-radius: 0; /*Removes default border-radius that FF applies*/
- 
-    /*custom styles*/
-    background-color: #5cd5eb;
-    height: 2rem;
-    width: 1rem;
- }
- 
- input[type="range"]:focus::-moz-range-thumb {
-   border: 1px solid #053a5f;
-   outline: 3px solid #053a5f;
-   outline-offset: 0.125rem; 
+ .arruma2 span{
+    width: 15rem;
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
  }
