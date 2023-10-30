@@ -8,6 +8,8 @@
     <title>Atendimento de Ocorrências</title>
     <link rel="icon" type="image/png" href="image/logo_noar.png">
     <link rel="stylesheet" href="css/janelas.css">
+    <script src="jquery-1.8.2.min.js"></script>
+    <script src="https://kit.fontawesome.com/f87260a7c7.js" crossorigin="anonymous"></script>
 </head>
 
 <script>
@@ -27,17 +29,7 @@
 					  
 				var valores = meu_json;       
                 var lista = valores.dados;                   
-                for(x=0;x<lista.length;x++)
-            {
-                console.log(lista[x].op1);                         
-                console.log(lista[x].op2);                       
-                console.log(lista[x].op3);         
-                console.log(lista[x].op4); 
-                console.log(lista[x].op5);
-                console.log(lista[x].op6);               
-                console.log("  ");
-
-            }},
+            },
 			error: function(xhr, status, error) {
 				// Aqui poderíamos preencher uma <div> com o innerHTML por exemplo
 				console.error('Ocorreu um erro ao enviar os dados: ' + error);
@@ -47,7 +39,7 @@
 			},
 			complete: function(xhr, status) {
 				document.getElementById("check").style.display = "flex";
-                window.parent.abrir4();
+                window.parent.abrir2();
 			},
 			timeout: 5000    // Define um tempo limite de 5 segundos (5000 milissegundos)
 		});
@@ -68,7 +60,7 @@
         <div class="texto">
             <h2>Tipo de Ocorrência:</h2>
         </div>
-        <form action="#" method="post" class="form">
+        <form action="" method="post" class="form" id="form1">
             <div class="separa">
                 <div class="d1">
                     <label for="opcao1" class="agrupamento">
@@ -200,7 +192,7 @@
                             <p>Outros</p>
                         </div>
                         <div class="arruma2">
-                            <input type="text" placeholder="Digite Aqui" name="op6">
+                            <input type="text" placeholder="Digite Aqui" name="opcao21" id="opcao21">
                         </div>
                     </label><br>
                 </div>
