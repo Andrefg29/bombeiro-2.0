@@ -39,8 +39,7 @@ h3{
     justify-content: space-between;
     padding: 0 5%;
     justify-items: center;
-    border: 2px solid rgba(122, 94, 94, 0.459);
-    border-radius: 25px;
+    border-bottom: 2px solid rgba(122, 94, 94, 0.29);
     height: 40px;
     transition: .3s;
 }
@@ -60,10 +59,8 @@ h3{
     background: rgba(218,21,21,1)
 }
 
-.abacima.active{
-    color: #fff;
-    background: rgba(218,21,21,1);
-    border: 2px solid rgba(50, 44, 44, 0.455)
+.abacima.active{   
+    border-bottom: 2px solid rgba(218,21,21,1)
 }
 
 .abas{
@@ -80,6 +77,7 @@ h3{
     width: 20%;
     cursor: pointer;
     transition: .5s;
+    
 }
 
 iframe{
@@ -104,6 +102,7 @@ iframe{
     width: 70%;
     height: 75vh;
     margin-top: -10%;
+    
 }
 
 .iframes iframe{
