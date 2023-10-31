@@ -26,7 +26,7 @@
 							
 			success: function(meu_json)
 			{
-					  
+				document.getElementById("check").style.display = "flex";	  
 				var valores = meu_json;       
                 var lista = valores.dados;                   
             },
@@ -38,7 +38,7 @@
 				document.getElementById("carregare").style.display = "flex";
 			},
 			complete: function(xhr, status) {
-				document.getElementById("check").style.display = "flex";
+				
                 window.parent.abrir2();
 			},
 			timeout: 5000    // Define um tempo limite de 5 segundos (5000 milissegundos)

@@ -46,9 +46,9 @@ $comando = $pdo->prepare("SELECT * FROM vitimaera WHERE id_paciente = $id_pacien
     $resultado = $comando->execute();
 
 if($comando->rowCount()){
-    $comando = $pdo->prepare("UPDATE vitimaera SET Ciclista = '$opcao1', Condutor moto = '$opcao2', Banco frente = '$opcao3', Moto = '$opcao4', Condutor carro = '$opcao5', Clinico = '$opcao6', Banco tras = '$opcao7', Pedestre = '$opcao8'  WHERE id_paciente = $id_paciente");}
+    $comando = $pdo->prepare("UPDATE vitimaera SET Ciclista = '$opcao1', Condutor_moto = '$opcao2', Banco_frente = '$opcao3', Moto = '$opcao4', Condutor_carro = '$opcao5', Clinico = '$opcao6', Banco_tras = '$opcao7', Pedestre = '$opcao8'  WHERE id_paciente = $id_paciente");}
     else{
-        $comando = $pdo->prepare ("INSERT INTO vitimaera (id_paciente, Ciclista, Condutor moto, Banco frente, Moto, Condutor carro, Clinico, Banco tras, Pedestre) VALUES($id_paciente,'$opcao1','$opcao2', '$opcao3', '$opcao4', '$opcao5', '$opcao6','$opcao7','$opcao8')" );
+        $comando = $pdo->prepare ("INSERT INTO vitimaera (id_paciente, Ciclista, Condutor_moto, Banco_frente, Moto, Condutor_carro, Clinico, Banco_tras, Pedestre) VALUES($id_paciente,'$opcao1','$opcao2', '$opcao3', '$opcao4', '$opcao5', '$opcao6','$opcao7','$opcao8')" );
     }
 
     $resultado = $comando->execute();
