@@ -90,6 +90,7 @@ $idade_acomp = $_SESSION['idade_acomp'];
         <div class="abacima" onclick="abrir10();" id="aba10"><h3>Sinais Vitais:</h3><i class="fa-solid fa-chevron-right" id="seta10"></i></div>
         <div class="abacima" onclick="abrir11();" id="aba11"><h3>Objetos Recolhidos:</h3><i class="fa-solid fa-chevron-right" id="seta11"></i></div>
         <div class="abacima" onclick="abrir12();" id="aba12"><h3>Avaliação do Paciente:</h3><i class="fa-solid fa-chevron-right" id="seta12"></i></div>
+        <div class="abacima" onclick="abrir13();" id="aba13"><h3>Anamnese de Emergência Médica:</h3><i class="fa-solid fa-chevron-right" id="seta13"></i></div>
     </div>
     
     <div class="iframes">
@@ -105,6 +106,7 @@ $idade_acomp = $_SESSION['idade_acomp'];
         <iframe src="sinaisvitais.html" id="iframe10" width="100%" height="100%"></iframe>
         <iframe src="objetos.html" id="iframe11" width="100%" height="100%"></iframe>
         <iframe src="glascow.html" id="iframe12" width="100%" height="100%"></iframe>
+        <iframe src="emergenciamed.html" id="iframe13" width="100%" height="100%"></iframe>
     </div>
 </div>
 
@@ -137,6 +139,8 @@ $idade_acomp = $_SESSION['idade_acomp'];
     var aba11 = document.getElementById('aba11');
     var iframe12 = document.getElementById('iframe12');
     var aba12 = document.getElementById('aba12');
+    var iframe13 = document.getElementById('iframe13');
+    var aba13 = document.getElementById('aba13');
 
 
     function dados(){
@@ -172,6 +176,8 @@ $idade_acomp = $_SESSION['idade_acomp'];
        iframe11.style.display = 'none';
        aba12.classList.remove('active');
        iframe12.style.display = 'none';
+       aba13.classList.remove('active');
+       iframe13.style.display = 'none';
     }
 
     function abrir2(){
@@ -199,6 +205,8 @@ $idade_acomp = $_SESSION['idade_acomp'];
        iframe11.style.display = 'none';
        aba12.classList.remove('active');
        iframe12.style.display = 'none';
+       aba13.classList.remove('active');
+       iframe13.style.display = 'none';
     }
 
     function abrir3(){
@@ -226,6 +234,8 @@ iframe6.style.display = 'none';
        iframe11.style.display = 'none';
        aba12.classList.remove('active');
        iframe12.style.display = 'none';
+       aba13.classList.remove('active');
+       iframe13.style.display = 'none';
     }
 
     function abrir4(){
@@ -253,6 +263,8 @@ iframe6.style.display = 'none';
        iframe11.style.display = 'none';
        aba12.classList.remove('active');
        iframe12.style.display = 'none';
+       aba13.classList.remove('active');
+       iframe13.style.display = 'none';
     }
 
     function abrir5(){
@@ -280,6 +292,8 @@ iframe6.style.display = 'none';
        iframe11.style.display = 'none';
        aba12.classList.remove('active');
        iframe12.style.display = 'none';
+       aba13.classList.remove('active');
+       iframe13.style.display = 'none';
     }
 
     function abrir6(){
@@ -307,6 +321,8 @@ iframe6.style.display = 'none';
        iframe11.style.display = 'none';
        aba12.classList.remove('active');
        iframe12.style.display = 'none';
+       aba13.classList.remove('active');
+       iframe13.style.display = 'none';
     }
 
     function abrir7(){
@@ -334,6 +350,8 @@ iframe6.style.display = 'none';
        iframe11.style.display = 'none';
        aba12.classList.remove('active');
        iframe12.style.display = 'none';
+       aba13.classList.remove('active');
+       iframe13.style.display = 'none';
     }
 
     function abrir8(){
@@ -361,6 +379,8 @@ iframe6.style.display = 'none';
        iframe11.style.display = 'none';
        aba12.classList.remove('active');
        iframe12.style.display = 'none';
+       aba13.classList.remove('active');
+       iframe13.style.display = 'none';
     }
 
     function abrir9(){
@@ -388,6 +408,8 @@ iframe6.style.display = 'none';
        iframe11.style.display = 'none';
        aba12.classList.remove('active');
        iframe12.style.display = 'none';
+       aba13.classList.remove('active');
+       iframe13.style.display = 'none';
     }
 
     function abrir10(){
@@ -415,6 +437,8 @@ iframe6.style.display = 'none';
        iframe11.style.display = 'none';
        aba12.classList.remove('active');
        iframe12.style.display = 'none';
+       aba13.classList.remove('active');
+       iframe13.style.display = 'none';
     }
 
     function abrir11(){
@@ -442,6 +466,8 @@ iframe6.style.display = 'none';
        iframe11.style.display = 'block';
        aba12.classList.remove('active');
        iframe12.style.display = 'none';
+       aba13.classList.remove('active');
+       iframe13.style.display = 'none';
     }
 
     function abrir12(){
@@ -469,6 +495,37 @@ iframe6.style.display = 'none';
        iframe11.style.display = 'none';
        aba12.classList.add('active');
        iframe12.style.display = 'block';
+       aba13.classList.remove('active');
+       iframe13.style.display = 'none';
+    }
+
+    function abrir13(){
+       aba5.classList.remove('active');
+       aba1.classList.remove('active');
+       aba2.classList.remove('active');
+       aba3.classList.remove('active');
+       aba4.classList.remove('active');
+       iframe5.style.display = 'none';
+       iframe1.style.display = 'none';
+       iframe2.style.display = 'none';
+       iframe3.style.display = 'none';
+       iframe4.style.display = 'none';
+       aba6.classList.remove('active');
+       aba7.classList.remove('active');
+       iframe6.style.display = 'none';
+       iframe7.style.display = 'none';
+       aba8.classList.remove('active');
+       iframe8.style.display = 'none';
+       aba9.classList.remove('active');
+       iframe9.style.display = 'none';
+       aba10.classList.remove('active');
+       iframe10.style.display = 'none';
+       aba11.classList.remove('active');
+       iframe11.style.display = 'none';
+       aba12.classList.remove('active');
+       iframe12.style.display = 'none';
+       aba13.classList.add('active');
+       iframe13.style.display = 'block';
     }
 
 </script>
