@@ -98,7 +98,7 @@ h2 {
 
 .separa_btn{
     position: fixed;
-    top: 450px;
+    bottom: 0;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -284,12 +284,12 @@ label.agrupamento2{
 
 .form{
     overflow-y: scroll;
-    height: 400px;
+    height: 100%;
     display: block;
 }
 
 .container{
-    height: 400px; 
+    height: 100%; 
 }
 
 .loading{
