@@ -36,7 +36,7 @@
             height: 400px;
       }
 
-        .x {
+        .x,.fer, .set, .esv, .fab, .amp, .q1 {
             position: absolute;
         }
 
@@ -46,8 +46,38 @@
             color: black;
         }
 
+        .q1::after {
+            content: "\00D7";
+            font-size: 2.1em;
+            color: black;
+        }
+
+        .amp::after {
+            content: "\2610";
+            font-size: 2.1em;
+            color: black;
+        }
+
+        .fab::after {
+            content: "\26AC";
+            font-size: 2.1em;
+            color: black;
+        }
+
         .fer::after{
             content: "\2617";
+            font-size: 1.6em;
+            color: black;
+        }
+
+        .set::after{
+            content: "\2197";
+            font-size: 2.1em;
+            color: black;
+        }
+
+        .esv::after{
+            content: "\2733";
             font-size: 2.1em;
             color: black;
         }
@@ -55,7 +85,7 @@
         .lista {
             overflow: hidden;
             border-radius: 20px;
-            border: 2px solid black;
+            border: 2px solid #b92020;
             width: 15%;
             display: flex;
             align-items: center;
@@ -65,10 +95,10 @@
             flex-direction: row;
             cursor: pointer;
             transition: .5s;
-            background-color: black;
+            background-color: #b92020;
             color: #fff;
             height: 40px;
-            margin: 2%  
+            margin: 1%  
         }
 
         .lista i {
@@ -117,14 +147,49 @@
                 <div class="d1">
                     <h3>Legendas:</h3>
 
-                    <div class="lista ativo" onclick="xis();" id="1">
+                    <div class="lista" onclick="xis(1);" id="d1">
                         <i class="fa-solid fa-xmark"></i>
                         <p>Fraturas/Luxações/Entorses</p>
                     </div>
 
-                    <div class="lista" onclick="fer();" id="2">
+                    <div class="lista" onclick="fer(2);" id="d2">
                         <i>&#9751;</i>
                         <p>Ferimentos Diversos</p>
+                    </div>
+
+                    <div class="lista" onclick="set(3);" id="d3">
+                        <i>&#8599;</i>
+                        <p>Hemorragias</p>
+                    </div>
+
+                    <div class="lista" onclick="esv(4);" id="d4">
+                        <i>&#10035;</i>
+                        <p>Esviceração</p>
+                    </div>
+
+                    <div class="lista" onclick="fab(5);" id="d5">
+                        <i>&#9900;</i>
+                        <p>F.A.B ou F.A.F</p>
+                    </div>
+
+                    <div class="lista" onclick="amp(6);" id="d6">
+                        <i>&#9744;</i>
+                        <p>Amputação</p>
+                    </div>
+
+                    <div class="lista" onclick="q1(7);" id="d7">
+                        <i>&#10102;</i>
+                        <p>Queimadura 1º Grau</p>
+                    </div>
+
+                    <div class="lista" onclick="q2(8);" id="d8">
+                        <i>&#10103;</i>
+                        <p>Queimadura 2º Grau</p>
+                    </div>
+
+                    <div class="lista" onclick="q3(9);" id="d9">
+                        <i>&#10104;</i>
+                        <p>Queimadura 3º Grau</p>
                     </div>
                 </div>
 
@@ -143,6 +208,34 @@
                     <div class="fer" id="fer4" style="display: none;"></div>
                     <div class="fer" id="fer5" style="display: none;"></div>
                     <div class="fer" id="fer6" style="display: none;"></div>
+
+                    <div class="set" id="set" style="display: none;"></div>
+                    <div class="set" id="set2" style="display: none;"></div>
+                    <div class="set" id="set3" style="display: none;"></div>
+                    <div class="set" id="set4" style="display: none;"></div>
+                    <div class="set" id="set5" style="display: none;"></div>
+                    <div class="set" id="set6" style="display: none;"></div>
+
+                    <div class="esv" id="esv" style="display: none;"></div>
+                    <div class="esv" id="esv2" style="display: none;"></div>
+                    <div class="esv" id="esv3" style="display: none;"></div>
+                    <div class="esv" id="esv4" style="display: none;"></div>
+                    <div class="esv" id="esv5" style="display: none;"></div>
+                    <div class="esv" id="esv6" style="display: none;"></div>
+
+                    <div class="fab" id="fab" style="display: none;"></div>
+                    <div class="fab" id="fab2" style="display: none;"></div>
+                    <div class="fab" id="fab3" style="display: none;"></div>
+                    <div class="fab" id="fab4" style="display: none;"></div>
+                    <div class="fab" id="fab5" style="display: none;"></div>
+                    <div class="fab" id="fab6" style="display: none;"></div>
+
+                    <div class="amp" id="amp" style="display: none;"></div>
+                    <div class="amp" id="amp2" style="display: none;"></div>
+                    <div class="amp" id="amp3" style="display: none;"></div>
+                    <div class="amp" id="amp4" style="display: none;"></div>
+                    <div class="amp" id="amp5" style="display: none;"></div>
+                    <div class="amp" id="amp6" style="display: none;"></div>
                 </div>
                 </div>
             </div>
@@ -199,15 +292,30 @@
     }
 
     let abax = true;
+    let fx = true;
+    let sx = true;
+    let ex = true;
+    let fax = true;
+    let ax = true;
+    let qx = true;
+    let setx = 0;
     let clickx = 0;
-    const rect = e.target.getBoundingClientRect();
+    let ferx =0;
+    let esvx=0;
+    let fabx=0;
+    let ampx=0;
+    let q1=0;
 
-    function xis() {
+
+    function xis(n) {
+        for(c = 1; c<=9;c++){
+            q = 'd'+c;
+            console.log(q)
+            document.getElementById(q).classList.remove('ativo');
+        }
+        document.getElementById('d'+n).classList.add('ativo');
+
         clickx = clickx + 1;
-
-        document.getElementById('2').remove('ativo');
-        document.getElementById('1').add('ativo')
-
 
         if (clickx == 1) {
             document.getElementById('x').style.display = "inline";
@@ -269,8 +377,380 @@
 
     function para() {
             abax = false;
+            fx = false;
+            sx = false;
+            ex = false;
+            fax = false;
+            ax = false;
+            qx = false;
     }
 
+    function fer(n){
+        for(c = 1; c<=9;c++){
+            q = 'd'+c;
+            console.log(q)
+            document.getElementById(q).classList.remove('ativo');
+        }
+        document.getElementById('d'+n).classList.add('ativo');
+
+        ferx = ferx + 1;
+
+if (ferx == 1) {
+    document.getElementById('fer').style.display = "inline";
+    fx = true;
+}
+if (ferx == 2) {
+    document.getElementById('fer2').style.display = "inline";
+    fx = true;
+}
+if (ferx == 3) {
+    document.getElementById('fer3').style.display = "inline";
+    fx = true;
+}
+if (ferx == 4) {
+    document.getElementById('fer4').style.display = "inline";
+    fx = true;
+}
+if (ferx == 5) {
+    document.getElementById('fer5').style.display = "inline";
+    fx = true;
+}
+if (ferx == 6) {
+    document.getElementById('fer6').style.display = "inline";
+    fx = true;
+}
+
+document.addEventListener("mousemove", function (e) {
+    if (fx == true) {
+        var x = e.clientX - document.getElementById('fudo').offsetLeft;
+        var y = e.clientY - document.getElementById('fudo').offsetTop;
+        if (ferx == 1) {
+            document.getElementById("fer").style.top = y  + "px";
+            document.getElementById("fer").style.left = x + "px";
+        }
+        if (ferx == 2) {
+            document.getElementById("fer2").style.top = y + "px";
+            document.getElementById("fer2").style.left = x + "px";
+        }
+        if (ferx == 3) {
+            document.getElementById("fer3").style.top = y  + "px";
+            document.getElementById("fer3").style.left = x + "px";
+        }
+        if (ferx == 4) {
+            document.getElementById("fer4").style.top = y + "px";
+            document.getElementById("fer4").style.left = x + "px";
+        }
+        if (ferx == 5) {
+            document.getElementById("fer5").style.top = y  + "px";
+            document.getElementById("fer5").style.left = x + "px";
+        }
+        if (ferx == 6) {
+            document.getElementById("fer6").style.top = y + "px";
+            document.getElementById("fer6").style.left = x + "px";
+        }
+    }
+
+})
+}
+
+    function set(n){
+        for(c = 1; c<=9;c++){
+            q = 'd'+c;
+            console.log(q)
+            document.getElementById(q).classList.remove('ativo');
+        }
+        document.getElementById('d'+n).classList.add('ativo');
+
+        setx = setx + 1;
+
+if (setx == 1) {
+    document.getElementById('set').style.display = "inline";
+    sx = true;
+}
+if (setx == 2) {
+    document.getElementById('set2').style.display = "inline";
+    sx = true;
+}
+if (setx == 3) {
+    document.getElementById('set3').style.display = "inline";
+    sx = true;
+}
+if (setx == 4) {
+    document.getElementById('set4').style.display = "inline";
+    sx = true;
+}
+if (setx == 5) {
+    document.getElementById('set5').style.display = "inline";
+    sx = true;
+}
+if (setx == 6) {
+    document.getElementById('set6').style.display = "inline";
+    sx = true;
+}
+
+document.addEventListener("mousemove", function (e) {
+    if (sx == true) {
+        var x = e.clientX - document.getElementById('fudo').offsetLeft;
+        var y = e.clientY - document.getElementById('fudo').offsetTop;
+        if (setx == 1) {
+            document.getElementById("set").style.top = y  + "px";
+            document.getElementById("set").style.left = x + "px";
+        }
+        if (setx == 2) {
+            document.getElementById("set2").style.top = y + "px";
+            document.getElementById("set2").style.left = x + "px";
+        }
+        if (setx == 3) {
+            document.getElementById("set3").style.top = y  + "px";
+            document.getElementById("set3").style.left = x + "px";
+        }
+        if (setx == 4) {
+            document.getElementById("set4").style.top = y + "px";
+            document.getElementById("set4").style.left = x + "px";
+        }
+        if (setx == 5) {
+            document.getElementById("set5").style.top = y  + "px";
+            document.getElementById("set5").style.left = x + "px";
+        }
+        if (setx == 6) {
+            document.getElementById("set6").style.top = y + "px";
+            document.getElementById("set6").style.left = x + "px";
+        }
+    }
+
+})
+    }
+
+    function esv(n){
+        for(c = 1; c<=9;c++){
+            q = 'd'+c;
+            console.log(q)
+            document.getElementById(q).classList.remove('ativo');
+        }
+        document.getElementById('d'+n).classList.add('ativo');
+
+        esvx = esvx + 1;
+
+if (esvx == 1) {
+    document.getElementById('esv').style.display = "inline";
+    ex = true;
+}
+if (esvx == 2) {
+    document.getElementById('esv2').style.display = "inline";
+    ex = true;
+}
+if (esvx == 3) {
+    document.getElementById('esv3').style.display = "inline";
+    ex = true;
+}
+if (esvx == 4) {
+    document.getElementById('esv4').style.display = "inline";
+    ex = true;
+}
+if (esvx == 5) {
+    document.getElementById('esv5').style.display = "inline";
+    ex = true;
+}
+if (esvx == 6) {
+    document.getElementById('esv6').style.display = "inline";
+    ex = true;
+}
+
+document.addEventListener("mousemove", function (e) {
+    if (ex == true) {
+        var x = e.clientX - document.getElementById('fudo').offsetLeft;
+        var y = e.clientY - document.getElementById('fudo').offsetTop;
+        if (esvx == 1) {
+            document.getElementById("esv").style.top = y  + "px";
+            document.getElementById("esv").style.left = x + "px";
+        }
+        if (esvx == 2) {
+            document.getElementById("esv2").style.top = y + "px";
+            document.getElementById("esv2").style.left = x + "px";
+        }
+        if (esvx == 3) {
+            document.getElementById("esv3").style.top = y  + "px";
+            document.getElementById("esv3").style.left = x + "px";
+        }
+        if (esvx == 4) {
+            document.getElementById("esv4").style.top = y + "px";
+            document.getElementById("esv4").style.left = x + "px";
+        }
+        if (esvx == 5) {
+            document.getElementById("esv5").style.top = y  + "px";
+            document.getElementById("esv5").style.left = x + "px";
+        }
+        if (esvx == 6) {
+            document.getElementById("esv6").style.top = y + "px";
+            document.getElementById("esv6").style.left = x + "px";
+        }
+    }
+
+})
+    }
+
+    function fab(n){
+        for(c = 1; c<=9;c++){
+            q = 'd'+c;
+            console.log(q)
+            document.getElementById(q).classList.remove('ativo');
+        }
+        document.getElementById('d'+n).classList.add('ativo');
+
+        fabx = fabx + 1;
+
+if (fabx == 1) {
+    document.getElementById('fab').style.display = "inline";
+    fax = true;
+}
+if (fabx == 2) {
+    document.getElementById('fab2').style.display = "inline";
+    fax = true;
+}
+if (fabx == 3) {
+    document.getElementById('fab3').style.display = "inline";
+    fax = true;
+}
+if (fabx == 4) {
+    document.getElementById('fab4').style.display = "inline";
+    fax = true;
+}
+if (fabx == 5) {
+    document.getElementById('fab5').style.display = "inline";
+    fax = true;
+}
+if (fabx == 6) {
+    document.getElementById('fab6').style.display = "inline";
+    fax = true;
+}
+
+document.addEventListener("mousemove", function (e) {
+    if (fax == true) {
+        var x = e.clientX - document.getElementById('fudo').offsetLeft;
+        var y = e.clientY - document.getElementById('fudo').offsetTop;
+        if (fabx == 1) {
+            document.getElementById("fab").style.top = y  + "px";
+            document.getElementById("fab").style.left = x + "px";
+        }
+        if (fabx == 2) {
+            document.getElementById("fab2").style.top = y + "px";
+            document.getElementById("fab2").style.left = x + "px";
+        }
+        if (fabx == 3) {
+            document.getElementById("fab3").style.top = y  + "px";
+            document.getElementById("fab3").style.left = x + "px";
+        }
+        if (fabx == 4) {
+            document.getElementById("fab4").style.top = y + "px";
+            document.getElementById("fab4").style.left = x + "px";
+        }
+        if (fabx == 5) {
+            document.getElementById("fab5").style.top = y  + "px";
+            document.getElementById("fab5").style.left = x + "px";
+        }
+        if (fabx == 6) {
+            document.getElementById("fab6").style.top = y + "px";
+            document.getElementById("fab6").style.left = x + "px";
+        }
+    }
+
+})
+    }
+
+    function amp(n){
+        for(c = 1; c<=9;c++){
+            q = 'd'+c;
+            console.log(q)
+            document.getElementById(q).classList.remove('ativo');
+        }
+        document.getElementById('d'+n).classList.add('ativo');
+
+        ampx = ampx + 1;
+
+        if (ampx == 1) {
+            document.getElementById('amp').style.display = "inline";
+            ax = true;
+        }
+        if (ampx == 2) {
+            document.getElementById('amp2').style.display = "inline";
+            ax = true;
+        }
+        if (ampx == 3) {
+            document.getElementById('amp3').style.display = "inline";
+            ax = true;
+        }
+        if (ampx == 4) {
+            document.getElementById('amp4').style.display = "inline";
+            ax = true;
+        }
+        if (ampx == 5) {
+            document.getElementById('amp5').style.display = "inline";
+            ax = true;
+        }
+        if (ampx == 6) {
+            document.getElementById('amp6').style.display = "inline";
+            ax = true;
+        }
+
+        document.addEventListener("mousemove", function (e) {
+            if (ax == true) {
+                var x = e.clientX - document.getElementById('fudo').offsetLeft;
+                var y = e.clientY - document.getElementById('fudo').offsetTop;
+                if (ampx == 1) {
+                    document.getElementById("amp").style.top = y  + "px";
+                    document.getElementById("amp").style.left = x + "px";
+                }
+                if (ampx == 2) {
+                    document.getElementById("amp2").style.top = y + "px";
+                    document.getElementById("amp2").style.left = x + "px";
+                }
+                if (ampx == 3) {
+                    document.getElementById("amp3").style.top = y  + "px";
+                    document.getElementById("amp3").style.left = x + "px";
+                }
+                if (ampx == 4) {
+                    document.getElementById("amp4").style.top = y + "px";
+                    document.getElementById("amp4").style.left = x + "px";
+                }
+                if (ampx == 5) {
+                    document.getElementById("amp5").style.top = y  + "px";
+                    document.getElementById("amp5").style.left = x + "px";
+                }
+                if (ampx == 6) {
+                    document.getElementById("amp6").style.top = y + "px";
+                    document.getElementById("amp6").style.left = x + "px";
+                }
+            }
+
+        })
+    }
+
+    function q1(n){
+        for(c = 1; c<=9;c++){
+            q = 'd'+c;
+            console.log(q)
+            document.getElementById(q).classList.remove('ativo');
+        }
+        document.getElementById('d'+n).classList.add('ativo');
+    }
+
+    function q2(n){
+        for(c = 1; c<=9;c++){
+            q = 'd'+c;
+            console.log(q)
+            document.getElementById(q).classList.remove('ativo');
+        }
+        document.getElementById('d'+n).classList.add('ativo');
+    }
+
+    function q3(n){
+        for(c = 1; c<=9;c++){
+            q = 'd'+c;
+            console.log(q)
+            document.getElementById(q).classList.remove('ativo');
+        }
+        document.getElementById('d'+n).classList.add('ativo');
+    }
 
 
 
