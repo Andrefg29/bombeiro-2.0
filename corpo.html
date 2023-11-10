@@ -36,7 +36,7 @@
             height: 400px;
       }
 
-        .x,.fer, .set, .esv, .fab, .amp, .q1 {
+        .x,.fer, .set, .esv, .fab, .amp, .q1, .q2, .q3 {
             position: absolute;
         }
 
@@ -47,7 +47,19 @@
         }
 
         .q1::after {
-            content: "\00D7";
+            content: "\2776";
+            font-size: 2.1em;
+            color: black;
+        }
+
+        .q2::after {
+            content: "\2777";
+            font-size: 2.1em;
+            color: black;
+        }
+
+        .q3::after {
+            content: "\2778";
             font-size: 2.1em;
             color: black;
         }
@@ -236,13 +248,34 @@
                     <div class="amp" id="amp4" style="display: none;"></div>
                     <div class="amp" id="amp5" style="display: none;"></div>
                     <div class="amp" id="amp6" style="display: none;"></div>
+
+                    <div class="q1" id="q1" style="display: none;"></div>
+                    <div class="q1" id="q12" style="display: none;"></div>
+                    <div class="q1" id="q13" style="display: none;"></div>
+                    <div class="q1" id="q14" style="display: none;"></div>
+                    <div class="q1" id="q15" style="display: none;"></div>
+                    <div class="q1" id="q16" style="display: none;"></div>
+
+                    <div class="q2" id="q2" style="display: none;"></div>
+                    <div class="q2" id="q22" style="display: none;"></div>
+                    <div class="q2" id="q23" style="display: none;"></div>
+                    <div class="q2" id="q24" style="display: none;"></div>
+                    <div class="q2" id="q25" style="display: none;"></div>
+                    <div class="q2" id="q26" style="display: none;"></div>
+
+                    <div class="q3" id="q3" style="display: none;"></div>
+                    <div class="q3" id="q32" style="display: none;"></div>
+                    <div class="q3" id="q33" style="display: none;"></div>
+                    <div class="q3" id="q34" style="display: none;"></div>
+                    <div class="q3" id="q35" style="display: none;"></div>
+                    <div class="q3" id="q36" style="display: none;"></div>
                 </div>
                 </div>
             </div>
 
             <div class="separa_btn">
                 <input type="button" value="Enviar" class="btn" onclick="Listar();">
-                <input type="reset" value="Limpar" class="btn">
+                <input type="reset" value="Limpar" class="btn" onclick="Limpar();">
             </div>
         </form>
     </div>
@@ -298,14 +331,17 @@
     let fax = true;
     let ax = true;
     let qx = true;
+    let qqx = true;
+    let qqqx = true;
     let setx = 0;
     let clickx = 0;
     let ferx =0;
     let esvx=0;
     let fabx=0;
     let ampx=0;
-    let q1=0;
-
+    let q1x=0;
+    let q2x=0;
+    let q3x=0;
 
     function xis(n) {
         for(c = 1; c<=9;c++){
@@ -383,6 +419,8 @@
             fax = false;
             ax = false;
             qx = false;
+            qqx = false;
+            qqqx = false;
     }
 
     function fer(n){
@@ -732,6 +770,65 @@ document.addEventListener("mousemove", function (e) {
             document.getElementById(q).classList.remove('ativo');
         }
         document.getElementById('d'+n).classList.add('ativo');
+
+        q1x = q1x + 1;
+
+        if (q1x == 1) {
+            document.getElementById('q1').style.display = "inline";
+            qx = true;
+        }
+        if (q1x == 2) {
+            document.getElementById('q12').style.display = "inline";
+            qx = true;
+        }
+        if (q1x == 3) {
+            document.getElementById('q13').style.display = "inline";
+            qx = true;
+        }
+        if (q1x == 4) {
+            document.getElementById('q14').style.display = "inline";
+            qx = true;
+        }
+        if (q1x == 5) {
+            document.getElementById('q15').style.display = "inline";
+            qx = true;
+        }
+        if (q1x == 6) {
+            document.getElementById('q16').style.display = "inline";
+            qx = true;
+        }
+
+        document.addEventListener("mousemove", function (e) {
+            if (qx == true) {
+                var x = e.clientX - document.getElementById('fudo').offsetLeft;
+                var y = e.clientY - document.getElementById('fudo').offsetTop;
+                if (q1x == 1) {
+                    document.getElementById("q1").style.top = y  + "px";
+                    document.getElementById("q1").style.left = x + "px";
+                }
+                if (q1x == 2) {
+                    document.getElementById("q12").style.top = y + "px";
+                    document.getElementById("q12").style.left = x + "px";
+                }
+                if (q1x == 3) {
+                    document.getElementById("q13").style.top = y  + "px";
+                    document.getElementById("q13").style.left = x + "px";
+                }
+                if (q1x == 4) {
+                    document.getElementById("q14").style.top = y + "px";
+                    document.getElementById("q14").style.left = x + "px";
+                }
+                if (q1x == 5) {
+                    document.getElementById("q15").style.top = y  + "px";
+                    document.getElementById("q15").style.left = x + "px";
+                }
+                if (q1x == 6) {
+                    document.getElementById("q16").style.top = y + "px";
+                    document.getElementById("q16").style.left = x + "px";
+                }
+            }
+
+        })
     }
 
     function q2(n){
@@ -741,6 +838,65 @@ document.addEventListener("mousemove", function (e) {
             document.getElementById(q).classList.remove('ativo');
         }
         document.getElementById('d'+n).classList.add('ativo');
+
+        q2x = q2x + 1;
+
+        if (q2x == 1) {
+            document.getElementById('q2').style.display = "inline";
+            qqx = true;
+        }
+        if (q2x == 2) {
+            document.getElementById('q22').style.display = "inline";
+            qqx = true;
+        }
+        if (q2x == 3) {
+            document.getElementById('q23').style.display = "inline";
+            qqx = true;
+        }
+        if (q2x == 4) {
+            document.getElementById('q24').style.display = "inline";
+            qqx = true;
+        }
+        if (q2x == 5) {
+            document.getElementById('q25').style.display = "inline";
+            qqx = true;
+        }
+        if (q2x == 6) {
+            document.getElementById('q26').style.display = "inline";
+            qqx = true;
+        }
+
+        document.addEventListener("mousemove", function (e) {
+            if (qqx == true) {
+                var x = e.clientX - document.getElementById('fudo').offsetLeft;
+                var y = e.clientY - document.getElementById('fudo').offsetTop;
+                if (q2x == 1) {
+                    document.getElementById("q2").style.top = y  + "px";
+                    document.getElementById("q2").style.left = x + "px";
+                }
+                if (q2x == 2) {
+                    document.getElementById("q22").style.top = y + "px";
+                    document.getElementById("q22").style.left = x + "px";
+                }
+                if (q2x == 3) {
+                    document.getElementById("q23").style.top = y  + "px";
+                    document.getElementById("q23").style.left = x + "px";
+                }
+                if (q2x == 4) {
+                    document.getElementById("q24").style.top = y + "px";
+                    document.getElementById("q24").style.left = x + "px";
+                }
+                if (q2x == 5) {
+                    document.getElementById("q25").style.top = y  + "px";
+                    document.getElementById("q25").style.left = x + "px";
+                }
+                if (q2x == 6) {
+                    document.getElementById("q26").style.top = y + "px";
+                    document.getElementById("q26").style.left = x + "px";
+                }
+            }
+
+        })
     }
 
     function q3(n){
@@ -750,6 +906,72 @@ document.addEventListener("mousemove", function (e) {
             document.getElementById(q).classList.remove('ativo');
         }
         document.getElementById('d'+n).classList.add('ativo');
+
+        q3x = q3x + 1;
+
+if (q3x == 1) {
+    document.getElementById('q3').style.display = "inline";
+    qqqx = true;
+}
+if (q3x == 2) {
+    document.getElementById('q32').style.display = "inline";
+    qqqx = true;
+}
+if (q3x == 3) {
+    document.getElementById('q33').style.display = "inline";
+    qqqx = true;
+}
+if (q3x == 4) {
+    document.getElementById('q34').style.display = "inline";
+    qqqx = true;
+}
+if (q3x == 5) {
+    document.getElementById('q35').style.display = "inline";
+    qqqx = true;
+}
+if (q3x == 6) {
+    document.getElementById('q36').style.display = "inline";
+    qqqx = true;
+}
+
+document.addEventListener("mousemove", function (e) {
+    if (qqqx == true) {
+        var x = e.clientX - document.getElementById('fudo').offsetLeft;
+        var y = e.clientY - document.getElementById('fudo').offsetTop;
+        if (q3x == 1) {
+            document.getElementById("q3").style.top = y  + "px";
+            document.getElementById("q3").style.left = x + "px";
+        }
+        if (q3x == 2) {
+            document.getElementById("q32").style.top = y + "px";
+            document.getElementById("q32").style.left = x + "px";
+        }
+        if (q3x == 3) {
+            document.getElementById("q33").style.top = y  + "px";
+            document.getElementById("q33").style.left = x + "px";
+        }
+        if (q3x == 4) {
+            document.getElementById("q34").style.top = y + "px";
+            document.getElementById("q34").style.left = x + "px";
+        }
+        if (q3x == 5) {
+            document.getElementById("q35").style.top = y  + "px";
+            document.getElementById("q35").style.left = x + "px";
+        }
+        if (q3x == 6) {
+            document.getElementById("q36").style.top = y + "px";
+            document.getElementById("q36").style.left = x + "px";
+        }
+    }
+
+})
+
+    limpa = document.getElementById("fudo").children;
+
+    function Limpar(){
+        limpa.style.display = "none";
+    }
+
     }
 
 
