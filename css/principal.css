@@ -9,7 +9,7 @@ body{
     align-content: center;
     justify-content: center;
     justify-items: center;
-    
+    background-image: url('../image/back.png');
 }
 
 h3{ 
@@ -100,8 +100,8 @@ iframe{
 
 .iframes{
     width: 70%;
-    height: 75vh;
-    margin-top: -10%;
+    height: 90vh;
+    margin-top: -16%;
     
 }
 
