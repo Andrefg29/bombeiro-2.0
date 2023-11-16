@@ -20,7 +20,7 @@
 
         $.ajax({
             type: "POST",
-            url: "arq5.php",
+            url: "arq6.php",
             data: dados,
             dataType: 'json',
 
@@ -38,7 +38,7 @@
             },
             complete: function (xhr, status) {
 
-                window.parent.abrir7();
+                window.parent.abrir(15);
             },
             timeout: 5000    // Define um tempo limite de 5 segundos (5000 milissegundos)
         });
@@ -75,7 +75,7 @@
                     </label><br>
 
                     <label for="opcao3" class="agrupamento">
-                        <input type="checkbox" id="opcao3" name="opcao3" value="Opção 1">
+                        <input type="checkbox" id="opcao3" name="opcao3" value="Opção 3">
                         <span class="checkmark"></span>
                         <div class="texto1">IGP/PC</div>
                     </label><br>
@@ -119,12 +119,12 @@
                         <div class="texto1">PRE</div>
                     </label><br>
 
-                    <label for="op2" class="agrupamento2">
+                    <label for="opcao9" class="agrupamento2">
                         <div class="titulo">
                             <p>SAMU</p>
                         </div>
                         <div class="arruma2">
-                            <select name="op2" id="op2">
+                            <select name="opcao9" id="opcao9">
                                 <option value="-----">-----</option>
                                 <option value="P">USA</option>
                                 <option value="M">USB</option>
@@ -132,12 +132,12 @@
                         </div>
                     </label><br>
 
-                    <label for="op6" class="agrupamento2">
+                    <label for="opcao10" class="agrupamento2">
                         <div class="titulo">
                             <p>Outros:</p>
                         </div>
                         <div class="arruma2">
-                            <input type="text" placeholder="Digite Aqui" name="op6">
+                            <input type="text" placeholder="Digite Aqui" name="opcao10">
                         </div>
                     </label><br>
                 </div>
