@@ -104,9 +104,11 @@ include('conecta.php');
         .pesq
         {
             width: 300px;
-            height: 22px;
+            height: 30px;
             font-size: 14px;
             font-family: 'Poppins', sans-serif;
+            margin-left: 10px;
+            
         }
     </style>
 
