@@ -1,5 +1,41 @@
 <?php
 
+$select = isset($_GET["pesq"])?$_GET["pesq"]:"xxxxx";
+$numero = isset($_GET["numero"])?$_GET["numero"]:0;
+$paciente = isset($_GET["paciente"])?$_GET["paciente"]:"xxxxx";
+$local = isset($_GET["local"])?$_GET["local"]:"xxxxx";
+$hospital = isset($_GET["hospital"])?$_GET["hospital"]:"xxxxx";
+$data = isset($_GET["data"])?$_GET["data"]:"1900-02-02";
+
+include("conecta.php");
+if($select == "N° da ocorrência"){
+    $comando = $pdo->prepare("SELECT * FROM paciente where id_paciente='$numero'");
+}
+else if($select == "Nome"){
+    $comando = $pdo->prepare("SELECT * FROM paciente where nome_paciente LIKE '%$paciente%'");
+}
+else if($select == "Local"){
+    $comando = $pdo->prepare("SELECT * FROM paciente where `local` LIKE '%$local%'");
+}
+else if($select == "Hospital"){
+    $comando = $pdo->prepare("SELECT * FROM paciente where `nome_hospital` LIKE '%$hospital%'");
+}
+else if($select == "Data"){
+    $comando = $pdo->prepare("SELECT * FROM paciente where `data`='$data'");
+}
+
+
+
+
+
+else{
+    $comando = $pdo->prepare("SELECT * FROM paciente where id_paciente=0");
+}
+
+$resultado = $comando->execute();
+
+
+
 include('conecta.php');
     if(isset($_POST['entrar'])){
         $email = $_POST['email'];
@@ -23,6 +59,7 @@ include('conecta.php');
 
 ?>
 
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -31,7 +68,7 @@ include('conecta.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pesquisa</title>
-    <link href="css/entregas.css" rel="stylesheet">
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 
@@ -101,15 +138,35 @@ include('conecta.php');
 
         }
 
-        .pesq
+        .pesq 
         {
-            width: 300px;
-            height: 30px;
+            width: 20%;
+            height: 36px;
             font-size: 14px;
             font-family: 'Poppins', sans-serif;
             margin-left: 10px;
             
         }
+
+        .inpute{
+            display: none;
+            width: 60%;
+            height: 30px;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            margin-left: 10px;
+        }
+        #i1{
+            display: block
+        }
+
+        .pesquisa{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        
     </style>
 
 </head>
@@ -118,31 +175,29 @@ include('conecta.php');
 
     <div class="pesquisas">
         <h2>Histórico de ocorrência - Bombeiros voluntários</h2>
-        <form action="loginadm.php" method="get">
+        <form action="pesquisa.php" method="get">
 
             <fieldset class="pesquisa">
                 <legend> Pesquisar paciente </legend>
                 Pesquisar por:
-                <select name="pesq" id="pesq" class="pesq">
-                    <option value="-----">-----</option>
+                <select name="pesq" id="pesq" class="pesq" onclick="Input();">
                     <option value="N° da ocorrência">N° da ocorrência</option>
-                    <option value="Nome">Nome</option>
-                    <option value="Local">Local</option>
-                    <option value="Hospital">Hospital</option>
-                    <option value="Veículo envolvido">Veículo envolvido</option>
-                    <option value="Data">Data</option>
+                    <option value="Nome">Nome do Paciente</option>
+                    <option value="Local">Local da Ocorrência</option>
+                    <option value="Hospital">Nome do Hospital</option>
+                    <option value="Data">Data da Ocorrência</option>
                 </select>
+                <input type="text" class="inpute" placeholder="Digite o N° da ocorrência" id="i1" name="numero">
+                <input type="text" class="inpute" placeholder="Digite o Nome do Paciente" id="i2" name="paciente">
+                <input type="text" class="inpute" placeholder="Digite o Local da Ocorrência" id="i3" name="local">
+                <input type="text" class="inpute" placeholder="Digite o nome do Hospital" id="i4" name="hospital">
+                <input type="date" class="inpute" placeholder="Digite a Data da Ocorrência" id="i5" name="data">
                 <input type="submit" class="botaoen" value="Pesquisar" style="width: 10%;" >
 
             </fieldset>
         </form>
 
         <br>
-
-
-
-
-
 
         <div class="usuario">
             <table border="1" class="usuariot">
@@ -151,22 +206,35 @@ include('conecta.php');
                     <th>Nome</th>
                     <th>Local</th>
                     <th>Hospital</th>
-                    <th>Veículo envolvido</th>
                     <th>Data</th>
                     <th>--</th>
                 </thead>
 
-                <tr>
-                    <td>N° da ocorrência</td>
-                    <td>Nome</td>
-                    <td>Local</td>
-                    <td>Hospital</td>
-                    <td>Veículo envolvido</td>
-                    <td>Data</td>
-                    <td>
-                        <img src='./image/lupa.png' width='25px'>
-                    </td>
-                </tr>
+               
+                <?php
+                        while ($linhas = $comando->fetch()){
+                            $id_paciente = $linhas["id_paciente"];
+                            $nome = $linhas["nome_paciente"];
+                            $local = $linhas["local"];
+                            $hospital = $linhas["nome_hospital"];
+                            $data = $linhas["data"];
+                            $temp = explode("-",$data);
+                            $data = $temp[2] . "/" . $temp[1] . "/" . $temp[0];
+                            echo("
+                                <tr>
+                                    <td>$id_paciente</td>
+                                    <td>$nome</td>
+                                    <td>$local</td>
+                                    <td>$hospital</td>
+                                    <td>$data</td>
+                                    <td>
+                                    <img src='./image/lupa.png' width='25px'>
+                                    </td>
+                                </tr>
+                            ");
+                        }
+                    ?>
+                 
 
             </table>
         </div>
@@ -178,6 +246,46 @@ include('conecta.php');
             senha.value = txtsenha;
             cep.value = txtcep;
         }
+
+        function Input(){
+            if (document.getElementById('pesq').value == "N° da ocorrência") {
+            document.getElementById('i1').style.display ='block';
+            document.getElementById('i2').style.display ='none';
+            document.getElementById('i3').style.display ='none';
+            document.getElementById('i4').style.display ='none';
+            document.getElementById('i5').style.display ='none';}
+
+            if (document.getElementById('pesq').value == "Nome") {
+            document.getElementById('i1').style.display ='none';
+            document.getElementById('i2').style.display ='block';
+            document.getElementById('i3').style.display ='none';
+            document.getElementById('i4').style.display ='none';
+            document.getElementById('i5').style.display ='none';}
+
+            if (document.getElementById('pesq').value == "Local") {
+            document.getElementById('i1').style.display ='none';
+            document.getElementById('i2').style.display ='none';
+            document.getElementById('i3').style.display ='block';
+            document.getElementById('i4').style.display ='none';
+            document.getElementById('i5').style.display ='none';}
+
+            if (document.getElementById('pesq').value == "Hospital") {
+            document.getElementById('i1').style.display ='none';
+            document.getElementById('i2').style.display ='none';
+            document.getElementById('i3').style.display ='none';
+            document.getElementById('i4').style.display ='block';
+            document.getElementById('i5').style.display ='none';}
+
+            if (document.getElementById('pesq').value == "Data") {
+            document.getElementById('i1').style.display ='none';
+            document.getElementById('i2').style.display ='none';
+            document.getElementById('i3').style.display ='none';
+            document.getElementById('i4').style.display ='none';
+            document.getElementById('i5').style.display ='block';}
+        }
+        
+    
+  
 
     </script>
 </body>
