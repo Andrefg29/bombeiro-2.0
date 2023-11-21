@@ -80,11 +80,11 @@ $idade_acomp = $_SESSION['idade_acomp'];
         <h3 class="ti">Tópicos:</h3>
         <div class="abacima active" onclick="abrir(1);" id="aba1"><h3>Tipo de Ocorrência:</h3><i class="fa-solid fa-chevron-right" id="seta"></i></div>
         <div class="abacima" onclick="abrir(2);" id="aba2"><h3>Sobre a Vítima:</h3><i class="fa-solid fa-chevron-right" id="seta2"></i></div>
-        <div class="abacima" onclick="abrir(3);" id="aba3"><h3>Problemas:</h3><i class="fa-solid fa-chevron-right" id="seta3"></i></div>
-        <div class="abacima" onclick="abrir(4);" id="aba4"><h3>Procedimentos:</h3><i class="fa-solid fa-chevron-right" id="seta4"></i></div>
+        <div class="abacima" onclick="abrir(3);" id="aba3"><h3>Problemas Encontrados:</h3><i class="fa-solid fa-chevron-right" id="seta3"></i></div>
+        <div class="abacima" onclick="abrir(4);" id="aba4"><h3>Avaliação do Paciente:</h3><i class="fa-solid fa-chevron-right" id="seta4"></i></div>
         <div class="abacima" onclick="abrir(5);" id="aba5"><h3>Condução:</h3><i class="fa-solid fa-chevron-right" id="seta5"></i></div>
         <div class="abacima" onclick="abrir(6);" id="aba6"><h3>Sinais e Sintomas:</h3><i class="fa-solid fa-chevron-right" id="seta6"></i></div>
-        <div class="abacima" onclick="abrir(7);" id="aba7"><h3>Anamnese Gestacional:</h3><i class="fa-solid fa-chevron-right" id="seta7"></i></div>
+        <div class="abacima" onclick="abrir(7);" id="aba7"><h3>Localização dos Traumas:</h3><i class="fa-solid fa-chevron-right" id="seta7"></i></div>
         <div class="abacima" onclick="abrir(8);" id="aba8"><h3>Decisão de Tranporte:</h3><i class="fa-solid fa-chevron-right" id="seta8"></i></div>
         <div class="abacima" onclick="abrir(9);" id="aba9"><h3>Equipe de Atendimento:</h3><i class="fa-solid fa-chevron-right" id="seta9"></i></div>
         <div class="abacima" onclick="abrir(10);" id="aba10"><h3>Sinais Vitais:</h3><i class="fa-solid fa-chevron-right" id="seta10"></i></div>
@@ -99,10 +99,10 @@ $idade_acomp = $_SESSION['idade_acomp'];
         <iframe src="avaliacaopaciente.html" id="iframe1" width="100%" height="100%"></iframe>
         <iframe src="problemas.html" id="iframe3" width="100%" height="100%"></iframe>
         <iframe src="vitimaera.html" id="iframe2" width="100%" height="100%"></iframe>
-        <iframe src="procedimentos.html" id="iframe4" width="100%" height="100%"></iframe>
+        <iframe src="glascow.html" id="iframe4" width="100%" height="100%"></iframe>
         <iframe src="conducao.html" id="iframe5" width="100%" height="100%"></iframe>
         <iframe src="sinaisesintomas.html" id="iframe6" width="100%" height="100%"></iframe>
-        <iframe src="anamnesegest.html" id="iframe7" width="100%" height="100%"></iframe>
+        <iframe src="corpo.html" id="iframe7" width="100%" height="100%"></iframe>
         <iframe src="decisaodetransporte.html" id="iframe8" width="100%" height="100%"></iframe>
         <iframe src="equipe.html" id="iframe9" width="100%" height="100%"></iframe>
         <iframe src="sinaisvitais.html" id="iframe10" width="100%" height="100%"></iframe>
