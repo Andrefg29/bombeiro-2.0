@@ -165,43 +165,8 @@ $opcao44 = $_POST["opcao44"];
                     
                               
            if(isset($_POST["opcao38"])){
-                $opcao38 = "Sim";}
-                                
-                              
-           if(isset($_POST["opcao39"])){
-                $opcao39 = "Sim";}
-            
-                    
-                              
-           if(isset($_POST["opcao40"])){
-                $opcao40 = "Sim";}
-            
-                    
-                              
-           if(isset($_POST["opcao41"])){
-                $opcao41 = "Sim";}
-            
-                    
-                              
-           if(isset($_POST["opcao42"])){
-                $opcao42 = "Sim";}
-            
-                    
-                              
-           if(isset($_POST["opcao43"])){
-                $opcao43 = "Sim";}
-            
-                    
-                              
-           if(isset($_POST["opcao44"])){
-                $opcao44 = "Sim";}
-            
-    
-                    
-                    
-       
-        
-        
+                $opcao38 = "Sim";}     
+  
         session_start();
         $id_paciente = $_SESSION['id_paciente'];
 
@@ -212,7 +177,7 @@ $comando = $pdo->prepare("SELECT * FROM sinaisesintomas WHERE id_paciente = $id_
     $resultado = $comando->execute();
 
 if($comando->rowCount()){
-    $comando = $pdo->prepare("UPDATE procedimentos SET aspiracao = '$opcao1', avaliacao_inicial = '$opcao2', avaliacao_dirigida = '$opcao3', avaliacao_continuada = '$opcao4', chave_rautek = '$opcao5', canula_guedel = '$opcao6', desobstrucao_va = '$opcao7', emprego_dea = '$opcao8'  WHERE id_paciente = $id_paciente");}
+    $comando = $pdo->prepare("UPDATE sinaisesintomas SET abdomen_sensivel_rigido = '$opcao1', afundamento_cranio = '$opcao2', agitacao = '$opcao3', amnesia = '$opcao4', angina_peito = '$opcao5', apneia = '$opcao6', bradicardia = '$opcao7',  = '$opcao8'  WHERE id_paciente = $id_paciente");}
     else{
         $comando = $pdo->prepare ("INSERT INTO procedimentos (id_paciente, aspiracao, avaliacao_inicial, avaliacao_dirigida, avaliacao_continuada, chave_rautek, canula_guedel, desobstrucao_va, emprego_dea, maca_rodas, maca_rigida, ponte, retirado_capacete, rcp, rolamento90, gerenciamento_disco, limpeza_ferimento, curativos, compressivo, encravamento, ocular, queimadura, simples, rolamento180, tomada_decisao, tratado_choque, uso_canula, 3pontas, ventilacao_suporte, imobilizacao, membro_inf_dir, membro_inf_esq, membro_sup_dir, membro_sup_esq, quadril, cervical, uso_ked, uso_ttf, uso_colar, Oxigenioterapia, Reanimador) VALUES($id_paciente,'$opcao1','$opcao2', '$opcao3', '$opcao4', '$opcao5', '$opcao6','$opcao7','$opcao8')" );
     }
