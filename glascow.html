@@ -8,7 +8,52 @@
     <title>Atendimento de Ocorrências</title>
     <link rel="icon" type="image/png" href="image/logo_noar.png">
     <link rel="stylesheet" href="css/janelas.css">
+    <script src="jquery-1.8.2.min.js"></script>
+    <script src="https://kit.fontawesome.com/f87260a7c7.js" crossorigin="anonymous"></script>
 </head>
+
+<script>
+    function Listar(){
+		
+
+		var dados = $('#form1').serialize(); // TODOS OS CAMPOS DO <form> DEVEM TER 'name='
+		
+		$.ajax({
+			type: "POST",
+			url: "arq8.php",
+			data: dados,
+			dataType: 'json',
+							
+			success: function(meu_json)
+			{
+					  
+				var valores = meu_json;       
+                var lista = valores.dados;                   
+            },
+			error: function(xhr, status, error) {
+				// Aqui poderíamos preencher uma <div> com o innerHTML por exemplo
+				console.error('Ocorreu um erro ao enviar os dados: ' + error);
+			  },
+			beforeSend: function(xhr) {
+				document.getElementById("carregare").style.display = "flex";
+			},
+			complete: function(xhr, status) {
+				document.getElementById("check").style.display = "flex";
+                window.parent.abrir(5);
+			},
+			timeout: 5000    // Define um tempo limite de 5 segundos (5000 milissegundos)
+		});
+		
+		
+	}
+
+        function edit(){
+            document.getElementById("check").style.display = "none";
+            document.getElementById("carregare").style.display = "none";
+        }
+
+
+</script>
 
 <body>
 
@@ -21,34 +66,37 @@
                 <div class="d1">
                     <h3>Maiores de 5 anos:</h3>
 
-                    <label for="op6" class="agrupamento2">
+                    <label for="op1" class="agrupamento2">
                         <div class="titulo">
                             <p>Abertura Ocular</p>
                         </div>
                         <div class="arruma2">
-                            <input type="range" min="1" max="4" name="op6" onmousemove="rangeSlider(this.value)">
+                            <input type="range" min="1" max="4" onmousemove="rangeSlider(this.value)">
                             <br>
                             <span id="rangeValue">Nenhuma</span>
+                            <input type="hidden" id="valor1" name="op1" value="">
                         </div>
                     </label><br>
 
-                    <label for="op7" class="agrupamento2">
+                    <label for="op2" class="agrupamento2">
                         <div class="titulo">
                             <p>Resposta Verbal</p>
                         </div>
                         <div class="arruma2">
-                            <input type="range" min="1" max="5" name="op7" onmousemove="rangeSlider2(this.value)" >
+                            <input type="range" min="1" max="5" name="op2" onmousemove="rangeSlider2(this.value)" >
                             <span id="rangeValue2">Nenhuma</span>
+                            <input type="hidden" id="valor2" name="op2" value="">
                         </div>
                     </label><br>
 
-                    <label for="op8" class="agrupamento2">
+                    <label for="op3" class="agrupamento2">
                         <div class="titulo">
                             <p>Resposta Motora</p>
                         </div>
                         <div class="arruma2">
-                            <input type="range" min="1" max="6" name="op8" onmousemove="rangeSlider3(this.value)">
+                            <input type="range" min="1" max="6" name="op3" onmousemove="rangeSlider3(this.value)">
                             <span id="rangeValue3">Nenhuma</span>
+                            <input type="hidden" id="valor3" name="op3" value="">
                         </div>
                     </label><br>
                 </div>
@@ -56,33 +104,36 @@
                 <div class="d2">
                     <h3>Menores de 5 anos:</h3>
 
-                    <label for="op6" class="agrupamento2">
+                    <label for="op4" class="agrupamento2">
                         <div class="titulo">
                             <p>Abertura Ocular</p>
                         </div>
                         <div class="arruma2">
-                            <input type="range" min="1" max="4" name="op6" onmousemove="rangeSlider4(this.value)">
+                            <input type="range" min="1" max="4" name="op4" onmousemove="rangeSlider4(this.value)">
                             <span id="rangeValue4">Nenhuma</span>
+                            <input type="hidden" id="valor4" name="op4" value="">
                         </div>
                     </label><br>
 
-                    <label for="op7" class="agrupamento2">
+                    <label for="op5" class="agrupamento2">
                         <div class="titulo">
                             <p>Resposta Verbal</p>
                         </div>
                         <div class="arruma2">
-                            <input type="range" min="1" max="5" name="op7" onmousemove="rangeSlider5(this.value)">
+                            <input type="range" min="1" max="5" name="op5" onmousemove="rangeSlider5(this.value)">
                             <span id="rangeValue5">Nenhuma</span>
+                            <input type="hidden" id="valor5" name="op5" value="">
                         </div>
                     </label><br>
 
-                    <label for="op8" class="agrupamento2">
+                    <label for="op6" class="agrupamento2">
                         <div class="titulo">
                             <p>Resposta Motora</p>
                         </div>
                         <div class="arruma2">
-                            <input type="range" min="1" max="6" name="op8" onmousemove="rangeSlider6(this.value)">
+                            <input type="range" min="1" max="6" name="op6" onmousemove="rangeSlider6(this.value)">
                             <span id="rangeValue6">Ausência</span>
+                            <input type="hidden" id="valor6" name="op6" value="">
                         </div>
                     </label><br>
 
@@ -90,10 +141,16 @@
             </div>
             <br>
             <div class="separa_btn">
-                <input type="submit" value="Enviar" class="btn">
+                <input type="button" value="Enviar" class="btn" onclick="Listar();">
                 <input type="reset" value="Limpar" class="btn">
             </div>
         </form>
+    </div>
+
+    <div class="loading" id="carregare"><span class="carregamento"></span></div>
+    <div class="checko" id="check">
+        <i class="fa-solid fa-circle-check" style="color: #51cb25;"></i><br>
+        <span onclick="edit();">Alterar Dados</span>
     </div>
 </body>
 <script>
@@ -113,6 +170,7 @@
                     if (document.getElementById('rangeValue').innerHTML == "4") {
                         document.getElementById('rangeValue').innerHTML = "Espontânea";
                     }
+        document.getElementById('valor1').value = document.getElementById('rangeValue').innerHTML;
     }
 
     function rangeSlider4(value) {
@@ -131,6 +189,9 @@
                     if (document.getElementById('rangeValue4').innerHTML == "4") {
                         document.getElementById('rangeValue4').innerHTML = "Espontânea";
                     }
+
+        document.getElementById('valor2').value = document.getElementById('rangeValue2').innerHTML;
+        
     }
 
     function rangeSlider2(value) {
@@ -153,6 +214,7 @@
                     if (document.getElementById('rangeValue2').innerHTML == "5") {
                         document.getElementById('rangeValue2').innerHTML = "Orientado";
                     }
+        document.getElementById('valor3').value = document.getElementById('rangeValue3').innerHTML;
     }
 
     function rangeSlider5(value) {
@@ -175,6 +237,8 @@
                     if (document.getElementById('rangeValue5').innerHTML == "5") {
                         document.getElementById('rangeValue5').innerHTML = "Palavras e Frases Propriadas";
                     }
+            document.getElementById('valor5').value = document.getElementById('rangeValue5').innerHTML;
+        
     }
 
     function rangeSlider3(value) {
@@ -201,6 +265,8 @@
                     if (document.getElementById('rangeValue3').innerHTML == "6") {
                         document.getElementById('rangeValue3').innerHTML = "Obedece os Comandos";
                     }
+
+        document.getElementById('valor3').value = document.getElementById('rangeValue3').innerHTML;
     }
 
     function rangeSlider6(value) {
@@ -227,6 +293,7 @@
                     if (document.getElementById('rangeValue6').innerHTML == "6") {
                         document.getElementById('rangeValue6').innerHTML = "Obedece Prontamente";
                     }
+            document.getElementById('valor6').value = document.getElementById('rangeValue6').innerHTML;
     }
 
             

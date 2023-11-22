@@ -50,7 +50,7 @@
       <br>
       <div class="idade2" id="div_idade">
         <span class="fa-solid fa-arrow-up-9-1"></span>
-        <input type="number" id="idade3" placeholder="Idade do Paciente" name="idade_acomp">
+        <input type="number" id="idade3" placeholder="Idade do Acompanhante" name="idade_acomp">
       </div>
       <br>
       </div>
