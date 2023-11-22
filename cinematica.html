@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atendimento de Ocorrências</title>
+    <link rel="icon" type="image/png" href="image/logo_noar.png">
+    <link rel="stylesheet" href="css/janelas.css">
+    <script src="jquery-1.8.2.min.js"></script>
+    <script src="https://kit.fontawesome.com/f87260a7c7.js" crossorigin="anonymous"></script>
+</head>
+<script>
+    function Listar(){
+		
+
+		var dados = $('#form1').serialize(); // TODOS OS CAMPOS DO <form> DEVEM TER 'name='
+		
+		$.ajax({
+			type: "POST",
+			url: "arq4.php",
+			data: dados,
+			dataType: 'json',
+							
+			success: function(meu_json)
+			{
+					  
+				var valores = meu_json;       
+                var lista = valores.dados;                   
+            },
+			error: function(xhr, status, error) {
+				// Aqui poderíamos preencher uma <div> com o innerHTML por exemplo
+				console.error('Ocorreu um erro ao enviar os dados: ' + error);
+			  },
+			beforeSend: function(xhr) {
+				document.getElementById("carregare").style.display = "flex";
+			},
+			complete: function(xhr, status) {
+				document.getElementById("check").style.display = "flex";
+                window.parent.abrir3();
+			},
+			timeout: 5000    // Define um tempo limite de 5 segundos (5000 milissegundos)
+		});
+		
+		
+	}
+
+        function edit(){
+            document.getElementById("check").style.display = "none";
+            document.getElementById("carregare").style.display = "none";
+        }
+
+</script>
+<body>
+
+    <div class="container">
+        <div class="texto">
+            <h2>Avaliação da Cinemática:</h2>
+        </div>
+        <form action="" method="post" class="form" id="form1">
+            <div class="separa">
+                <div class="d1">
+                    <label for="opcao1" class="agrupamento">
+                        <input type="checkbox" id="opcao1" name="opcao1" value="Opção 1">
+                        <span class="checkmark"></span>
+                        <div class="texto1">Disturbio de Comportamento</div>
+                    </label><br>
+
+                    <label for="opcao2" class="agrupamento">
+                        <input type="checkbox" id="opcao2" name="opcao2" value="Opção 2">
+                        <span class="checkmark"></span>
+                        <div class="texto1">Encontrado de Capacete</div>
+                    </label><br>
+
+
+                    <label for="opcao4" class="agrupamento">
+                        <input type="checkbox" id="opcao4" name="opcao4" value="Opção 4">
+                        <span class="checkmark"></span>
+                        <div class="texto1">Encontrado de cinto</div>
+                    </label><br>
+
+                    <label for="opcao5" class="agrupamento">
+                        <input type="checkbox" id="opcao5" name="opcao5" value="Opção 5">
+                        <span class="checkmark"></span>
+                        <div class="texto1">Para-Brisas Avariado</div>
+                    </label><br>
+                </div>
+
+                <div class="d2">
+                    <label for="opcao6" class="agrupamento">
+                        <input type="checkbox" id="opcao6" name="opcao6" value="Opção 6">
+                        <span class="checkmark"></span>
+                        <div class="texto1">Caminhando na Cena</div>
+                    </label><br>
+
+                    <label for="opcao7" class="agrupamento">
+                        <input type="checkbox" id="opcao7" name="opcao7" value="Opção 7">
+                        <span class="checkmark"></span>
+                        <div class="texto1">Painel Avariado</div>
+                    </label><br>
+
+                 
+                    <label for="opcao9" class="agrupamento">
+                        <input type="checkbox" id="opcao9" name="opcao9" value="Opção 9">
+                        <span class="checkmark"></span>
+                        <div class="texto1">Volante Torcido</div>
+                    </label><br>
+
+                
+                </div>
+            </div>
+            <br>
+            <div class="separa_btn">
+                <input type="button" value="Enviar" class="btn" onclick="Listar();">
+                <input type="reset" value="Limpar" class="btn">
+            </div>
+        </form>
+    </div>
+    <div class="loading" id="carregare"><span class="carregamento"></span></div>
+    <div class="checko" id="check">
+        <i class="fa-solid fa-circle-check" style="color: #51cb25;"></i><br>
+        <span onclick="edit();">Alterar Dados</span>
+    </div>
+
+</body>
+
+</html>
