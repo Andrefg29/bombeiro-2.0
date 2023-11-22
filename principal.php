@@ -92,7 +92,9 @@ $idade_acomp = $_SESSION['idade_acomp'];
         <div class="abacima" onclick="abrir(12);" id="aba12"><h3>Avaliação do Paciente:</h3><i class="fa-solid fa-chevron-right" id="seta12"></i></div>
         <div class="abacima" onclick="abrir(13);" id="aba13"><h3>Anamnese de Emergência Médica:</h3><i class="fa-solid fa-chevron-right" id="seta13"></i></div>
         <div class="abacima" onclick="abrir(14);" id="aba14"><h3>Meios Auxiliares:</h3><i class="fa-solid fa-chevron-right" id="seta14"></i></div>
-        <div class="abacima" onclick="abrir(15);" id="aba15"><h3>Materiais Utilizados:</h3><i class="fa-solid fa-chevron-right" id="seta14"></i></div>
+        <div class="abacima" onclick="abrir(15);" id="aba15"><h3>Materiais Utilizados:</h3><i class="fa-solid fa-chevron-right" id="seta15"></i></div>
+        <div class="abacima" onclick="abrir(16);" id="aba16"><h3>Avaliação da Cinemática:</h3><i class="fa-solid fa-chevron-right" id="seta16"></i></div>
+        <div class="abacima" onclick="abrir(17);" id="aba17"><h3>Responsável Pelo Preenchimento:</h3><i class="fa-solid fa-chevron-right" id="seta17"></i></div>
     </div>
     
     <div class="iframes">
@@ -111,6 +113,8 @@ $idade_acomp = $_SESSION['idade_acomp'];
         <iframe src="emergenciamed.html" id="iframe13" width="100%" height="100%"></iframe>
         <iframe src="policia.html" id="iframe14" width="100%" height="100%"></iframe>
         <iframe src="materiais.html" id="iframe15" width="100%" height="100%"></iframe>
+        <iframe src="cinematica.html" id="iframe16" width="100%" height="100%"></iframe>
+        <iframe src="responsavelpelopren.html" id="iframe17" width="100%" height="100%"></iframe>
     </div>
 </div>
 
@@ -129,7 +133,7 @@ $idade_acomp = $_SESSION['idade_acomp'];
     }
 
     function abrir(n){
-        for(c = 1; c<=15;c++){
+        for(c = 1; c<=17;c++){
             q = 'aba'+c;
             i = 'iframe'+c;
             document.getElementById(q).classList.remove('active');
