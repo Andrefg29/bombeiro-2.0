@@ -25,53 +25,44 @@
     </style>
 </head>
 <script>
-    function Listar() {
+    function Listar(){
+		
 
-
-        var dados = $('#form1').serialize(); // TODOS OS CAMPOS DO <form> DEVEM TER 'name='
-
-        $.ajax({
-            type: "POST",
-            url: "arquivo.php",
-            data: dados,
-            dataType: 'json',
-
-            success: function (meu_json) {
-
-                var valores = meu_json;
-                var lista = valores.dados;
-                for (x = 0; x < lista.length; x++) {
-                    console.log(lista[x].op1);
-                    console.log(lista[x].op2);
-                    console.log(lista[x].op3);
-                    console.log(lista[x].op4);
-                    console.log(lista[x].op5);
-                    console.log(lista[x].op6);
-                    console.log("  ");
-
-                }
+		var dados = $('#form1').serialize(); // TODOS OS CAMPOS DO <form> DEVEM TER 'name='
+		
+		$.ajax({
+			type: "POST",
+			url: "arq11.php",
+			data: dados,
+			dataType: 'json',
+							
+			success: function(meu_json)
+			{
+					  
+				var valores = meu_json;       
+                var lista = valores.dados;                   
             },
-            error: function (xhr, status, error) {
-                // Aqui poderíamos preencher uma <div> com o innerHTML por exemplo
-                console.error('Ocorreu um erro ao enviar os dados: ' + error);
-            },
-            beforeSend: function (xhr) {
-                document.getElementById("carregare").style.display = "flex";
-            },
-            complete: function (xhr, status) {
-                document.getElementById("check").style.display = "flex";
-                window.parent.abrir4();
-            },
-            timeout: 5000    // Define um tempo limite de 5 segundos (5000 milissegundos)
-        });
+			error: function(xhr, status, error) {
+				// Aqui poderíamos preencher uma <div> com o innerHTML por exemplo
+				console.error('Ocorreu um erro ao enviar os dados: ' + error);
+			  },
+			beforeSend: function(xhr) {
+				document.getElementById("carregare").style.display = "flex";
+			},
+			complete: function(xhr, status) {
+				document.getElementById("check").style.display = "flex";
+                window.parent.abrir(11);
+			},
+			timeout: 5000    // Define um tempo limite de 5 segundos (5000 milissegundos)
+		});
+		
+		
+	}
 
-
-    }
-
-    function edit() {
-        document.getElementById("check").style.display = "none";
-        document.getElementById("carregare").style.display = "none";
-    }
+        function edit(){
+            document.getElementById("check").style.display = "none";
+            document.getElementById("carregare").style.display = "none";
+        }
 
 </script>
 
@@ -90,8 +81,8 @@
                             <p>Pressão Arterial:</p>
                         </div>
                         <div class="arruma2">
-                            <input type="number" name="cep" class="pressao" placeholder="mmHg"> X <input type="number"
-                                name="cep2" class="pressao" placeholder="mmHg">
+                            <input type="number" name="op1" class="pressao" placeholder="mmHg"> X <input type="number"
+                                name="op12" class="pressao" placeholder="mmHg">
                         </div>
                     </label><br>
 
@@ -100,7 +91,7 @@
                             <p>Pulso:</p>
                         </div>
                         <div class="arruma2">
-                            <input type="number" placeholder="B.C.P.M." name="op1" class="pressao1">
+                            <input type="number" placeholder="B.C.P.M." name="op2" class="pressao1">
                         </div>
                     </label><br>
 
@@ -111,7 +102,7 @@
                             <p>Temperatura:</p>
                         </div>
                         <div class="arruma2">
-                            <input type="number" placeholder="Digite Aqui" name="op1" class="pressao1" >°C
+                            <input type="number" placeholder="Digite Aqui" name="op3" class="pressao1" >°C
                         </div>
                     </label><br>
 
@@ -120,7 +111,7 @@
                             <p>Perfusão:</p>
                         </div>
                         <div class="arruma2">
-                            <select name="op2" id="op2"  style="width: 150px;">
+                            <select name="op4" id="op4"  style="width: 150px;">
                                 <option value="-----">-----</option>
                                 <option value="P"> &#8250; 2 Seg</option>
                                 <option value="M"> &#8249; 2 Seg </option>
@@ -139,7 +130,7 @@
                         <p>Saturação:</p>
                     </div>
                     <div class="arruma2">
-                        <input type="number" placeholder="Digite Aqui" name="op6" class="pressao1"> %
+                        <input type="number" placeholder="Digite Aqui" name="op5" class="pressao1"> %
 
                     </div>
                 </label><br>
@@ -149,7 +140,7 @@
                         <p>Respiração:</p>
                     </div>
                     <div class="arruma2">
-                        <input type="number" placeholder="M.R.M." name="op1" class="pressao1">
+                        <input type="number" placeholder="M.R.M." name="op6" class="pressao1">
                     </div>
                 </label><br>
 
@@ -158,18 +149,18 @@
                         <p>HGT:</p>
                     </div>
                     <div class="arruma2">
-                        <input type="number" placeholder="mg" name="op1" class="pressao1">
+                        <input type="number" placeholder="mg" name="op7" class="pressao1">
                     </div>
                 </label><br>
                 <br>
                 <label  class="agrupamento2">
                     <div class="arruma4">
                         <label class="agrupamento">
-                            <input type="checkbox" id="op12" name="op12" value="Opção 12">
+                            <input type="checkbox" id="op12" name="op8" value="Opção 12">
                             <span class="checkmark"></span>
                             <div class="texto1">Anormal</div>
                         </label> <label class="agrupamento">
-                            <input type="checkbox" id="op14" name="op14" value="Opção 14">
+                            <input type="checkbox" id="op14" name="op9" value="Opção 14">
                             <span class="checkmark"></span>
                             <div class="texto1">Normal</div>
                         </label><br>

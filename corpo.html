@@ -274,8 +274,8 @@
             </div>
 
             <div class="separa_btn">
-                <input type="button" value="Enviar" class="btn" onclick="Listar();">
-                <input type="reset" value="Limpar" class="btn" onclick="Limpar();">
+                <input type="button" value="Enviar" class="btn">
+                <input type="submit" value="Limpar" class="btn">
             </div>
         </form>
     </div>
@@ -289,33 +289,21 @@
     function Listar() {
 
 
-        var dados = $('#form1').serialize(); // TODOS OS CAMPOS DO <form> DEVEM TER 'name='
+      
+    function capturarTela() {
+    // Selecione o elemento que você deseja capturar (pode ser o corpo inteiro, por exemplo)
+    var foto = document.body;
 
-        $.ajax({
-            type: "POST",
-            url: "arq2.php",
-            data: dados,
-            dataType: 'json',
+    // Use html2canvas para capturar o elemento e converter em uma imagem
+    html2canvas(foto).then(function(canvas) {
+        // Crie um elemento de imagem para exibir a captura de tela
+        var fotos = document.createElement('img');
+        fotos.src = canvas.toDataURL('image/png');
 
-            success: function (meu_json) {
-                document.getElementById("check").style.display = "flex";
-                var valores = meu_json;
-                var lista = valores.dados;
-            },
-            error: function (xhr, status, error) {
-                // Aqui poderíamos preencher uma <div> com o innerHTML por exemplo
-                console.error('Ocorreu um erro ao enviar os dados: ' + error);
-            },
-            beforeSend: function (xhr) {
-                document.getElementById("carregare").style.display = "flex";
-            },
-            complete: function (xhr, status) {
-
-                window.parent.abrir2();
-            },
-            timeout: 5000    // Define um tempo limite de 5 segundos (5000 milissegundos)
-        });
-
+        // Adicione a imagem à página ou faça o que quiser com ela
+        document.body.appendChild(fotos);
+    });
+}
 
     }
 
@@ -969,7 +957,7 @@ document.addEventListener("mousemove", function (e) {
     limpa = document.getElementById("fudo").children;
 
     function Limpar(){
-        limpa.style.display = "none";
+        document.getElementById("fudo").children.style.display = "none";
     }
 
     }

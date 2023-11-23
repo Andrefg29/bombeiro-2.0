@@ -9,6 +9,7 @@
     <link rel="icon" type="image/png" href="image/logo_noar.png">
     <link rel="stylesheet" href="css/janelas.css">
     <script src="https://kit.fontawesome.com/f87260a7c7.js" crossorigin="anonymous"></script>
+    <script src="jquery-1.8.2.min.js"></script>
     <style>
 
         label i{
@@ -39,14 +40,54 @@
         }
     </style>
 </head>
+<script>
+    function Listar(){
+		
 
+		var dados = $('#form1').serialize(); // TODOS OS CAMPOS DO <form> DEVEM TER 'name='
+		
+		$.ajax({
+			type: "POST",
+			url: "arq9.php",
+			data: dados,
+			dataType: 'json',
+							
+			success: function(meu_json)
+			{
+					  
+				var valores = meu_json;       
+                var lista = valores.dados;                   
+            },
+			error: function(xhr, status, error) {
+				// Aqui poderíamos preencher uma <div> com o innerHTML por exemplo
+				console.error('Ocorreu um erro ao enviar os dados: ' + error);
+			  },
+			beforeSend: function(xhr) {
+				document.getElementById("carregare").style.display = "flex";
+			},
+			complete: function(xhr, status) {
+				document.getElementById("check").style.display = "flex";
+                window.parent.abrir(9);
+			},
+			timeout: 5000    // Define um tempo limite de 5 segundos (5000 milissegundos)
+		});
+		
+		
+	}
+
+        function edit(){
+            document.getElementById("check").style.display = "none";
+            document.getElementById("carregare").style.display = "none";
+        }
+
+</script>
 <body>
 
     <div class="container">
         <div class="texto">
             <h2>Decisão de Transporte:</h2>
         </div>
-        <form action="#" method="post" class="form">
+        <form action="" method="post" class="form" id="form1">
             <div class="separa">
                 <div class="d1">
                     <label for="opcao1" class="agrupamento">
@@ -59,7 +100,7 @@
                     </label><br>
 
                     <label for="opcao3" class="agrupamento">
-                        <input type="checkbox" id="opcao3" name="opcao3" value="Opção 3">
+                        <input type="checkbox" id="opcao3" name="opcao2" value="Opção 3">
                         <span class="checkmark"></span>
                         <div class="emoji">
                         <i class="fa-regular fa-face-meh"></i>
@@ -70,7 +111,7 @@
 
                 <div class="d2">
                     <label for="opcao2" class="agrupamento">
-                        <input type="checkbox" id="opcao2" name="opcao2" value="Opção 2">
+                        <input type="checkbox" id="opcao2" name="opcao3" value="Opção 2">
                         <span class="checkmark"></span>
                         <div class="emoji">
                         <i class="fa-regular fa-face-tired"></i>
@@ -92,10 +133,15 @@
             </div>
             <br>
             <div class="separa_btn">
-                <input type="submit" value="Enviar" class="btn">
+                <input type="button" value="Enviar" class="btn" onclick="Listar();">
                 <input type="reset" value="Limpar" class="btn">
             </div>
         </form>
+    </div>
+    <div class="loading" id="carregare"><span class="carregamento"></span></div>
+    <div class="checko" id="check">
+        <i class="fa-solid fa-circle-check" style="color: #51cb25;"></i><br>
+        <span onclick="edit();">Alterar Dados</span>
     </div>
 </body>
 

@@ -17,7 +17,12 @@
       .d1{
         justify-content: flex-start;
       }
+
+
+
     </style>
+
+
   </head>
 
 <body>
@@ -38,12 +43,12 @@
             </div>
             <br>
             <div class="separa_btn">
-                <input type="submit" value="Enviar" class="btn">
+                <input type="button" value="Finalizar" class="btn" onclick="abriri();">
                 <input type="reset" value="Limpar" class="btn">
             </div>
        
     </div>
-
+    
 <script>
     
   topico = "senai/mensagem2";  // Variável que ficará no servidor MQTT
@@ -83,6 +88,14 @@ function Enviar()
   message = new Paho.MQTT.Message(texto);
   message.destinationName = topico;
   client.send(message);
+}
+
+function edita(){
+  document.getElementById('abre').style.display = 'none'
+}
+
+function abriri(){
+  window.parent.abriri();
 }
 
 </script>

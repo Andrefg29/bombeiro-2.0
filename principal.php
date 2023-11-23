@@ -29,6 +29,34 @@ $idade_acomp = $_SESSION['idade_acomp'];
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="icon" type="image/png" href="image/logobomb.png">
     <script src="https://kit.fontawesome.com/f87260a7c7.js" crossorigin="anonymous"></script>
+    <style>
+              .abrir{
+
+        height: 120vh;
+        width: 100%;
+        margin-top: -35%;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.623);
+        display: none;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        align-content: center;
+        flex-direction: column;
+        color: #fff;
+      }
+
+      .opcoes{
+        display: flex;
+        justify-content: space-around;
+        width: 30%
+      }
+
+      a{
+        text-decoration: none;
+        color: #fff;
+      }
+    </style>
 </head>
 <body>
     
@@ -118,11 +146,27 @@ $idade_acomp = $_SESSION['idade_acomp'];
     </div>
 </div>
 
+<div class="abrir" id="abre">
+      <h1>Deseja Finalizar a Ocorrência?</h1>
+      <div class="opcoes">
+        <a href="opcao.html">Sim</a>
+        <span onclick="edita();" style="cursor: pointer;">Alterar Dados</span>
+        </div>
+  </div>
+
     <a href="termo.pdf" target="_blank" class="termo"><i class="fa-regular fa-file-lines"></i></a>
 <iframe src="https://drive.google.com/file/d/1Xnor8IzKSUNpOuuwOh7gT4b-57YW4g9A/preview" width="640" height="480" allow="autoplay"></iframe>
 </body>
 
 <script>
+
+function edita(){
+  document.getElementById('abre').style.display = 'none'
+}
+
+function abriri(){
+  document.getElementById('abre').style.display = 'flex'
+}
 
     function dados(){
         document.getElementById('dado').style.display = 'block'

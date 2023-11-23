@@ -33,16 +33,7 @@
 
                 var valores = meu_json;
                 var lista = valores.dados;
-                for (x = 0; x < lista.length; x++) {
-                    console.log(lista[x].op1);
-                    console.log(lista[x].op2);
-                    console.log(lista[x].op3);
-                    console.log(lista[x].op4);
-                    console.log(lista[x].op5);
-                    console.log(lista[x].op6);
-                    console.log("  ");
-
-                }
+              
             },
             error: function (xhr, status, error) {
                 // Aqui poderíamos preencher uma <div> com o innerHTML por exemplo
@@ -53,7 +44,7 @@
             },
             complete: function (xhr, status) {
                 document.getElementById("check").style.display = "flex";
-                window.parent.abrir4();
+                window.parent.abrir(14);
             },
             timeout: 5000    // Define um tempo limite de 5 segundos (5000 milissegundos)
         });
