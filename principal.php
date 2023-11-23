@@ -81,7 +81,7 @@ $idade_acomp = $_SESSION['idade_acomp'];
         <div class="abacima active" onclick="abrir(1);" id="aba1"><h3>Tipo de Ocorrência:</h3><i class="fa-solid fa-chevron-right" id="seta"></i></div>
         <div class="abacima" onclick="abrir(2);" id="aba2"><h3>Sobre a Vítima:</h3><i class="fa-solid fa-chevron-right" id="seta2"></i></div>
         <div class="abacima" onclick="abrir(3);" id="aba3"><h3>Problemas Encontrados:</h3><i class="fa-solid fa-chevron-right" id="seta3"></i></div>
-        <div class="abacima" onclick="abrir(4);" id="aba4"><h3>Avaliação do Paciente:</h3><i class="fa-solid fa-chevron-right" id="seta4"></i></div>
+        <div class="abacima" onclick="abrir(4);" id="aba4"><h3>Nível de Consciência:</h3><i class="fa-solid fa-chevron-right" id="seta4"></i></div>
         <div class="abacima" onclick="abrir(5);" id="aba5"><h3>Condução:</h3><i class="fa-solid fa-chevron-right" id="seta5"></i></div>
         <div class="abacima" onclick="abrir(6);" id="aba6"><h3>Sinais e Sintomas:</h3><i class="fa-solid fa-chevron-right" id="seta6"></i></div>
         <div class="abacima" onclick="abrir(7);" id="aba7"><h3>Localização dos Traumas:</h3><i class="fa-solid fa-chevron-right" id="seta7"></i></div>
@@ -89,7 +89,7 @@ $idade_acomp = $_SESSION['idade_acomp'];
         <div class="abacima" onclick="abrir(9);" id="aba9"><h3>Equipe de Atendimento:</h3><i class="fa-solid fa-chevron-right" id="seta9"></i></div>
         <div class="abacima" onclick="abrir(10);" id="aba10"><h3>Sinais Vitais:</h3><i class="fa-solid fa-chevron-right" id="seta10"></i></div>
         <div class="abacima" onclick="abrir(11);" id="aba11"><h3>Objetos Recolhidos:</h3><i class="fa-solid fa-chevron-right" id="seta11"></i></div>
-        <div class="abacima" onclick="abrir(12);" id="aba12"><h3>Avaliação do Paciente:</h3><i class="fa-solid fa-chevron-right" id="seta12"></i></div>
+        <div class="abacima" onclick="abrir(12);" id="aba12"><h3>Procedimentos Efetuados:</h3><i class="fa-solid fa-chevron-right" id="seta12"></i></div>
         <div class="abacima" onclick="abrir(13);" id="aba13"><h3>Anamnese de Emergência Médica:</h3><i class="fa-solid fa-chevron-right" id="seta13"></i></div>
         <div class="abacima" onclick="abrir(14);" id="aba14"><h3>Meios Auxiliares:</h3><i class="fa-solid fa-chevron-right" id="seta14"></i></div>
         <div class="abacima" onclick="abrir(15);" id="aba15"><h3>Materiais Utilizados:</h3><i class="fa-solid fa-chevron-right" id="seta15"></i></div>
@@ -109,7 +109,7 @@ $idade_acomp = $_SESSION['idade_acomp'];
         <iframe src="equipe.html" id="iframe9" width="100%" height="100%"></iframe>
         <iframe src="sinaisvitais.html" id="iframe10" width="100%" height="100%"></iframe>
         <iframe src="objetos.html" id="iframe11" width="100%" height="100%"></iframe>
-        <iframe src="glascow.html" id="iframe12" width="100%" height="100%"></iframe>
+        <iframe src="procedimentos.html" id="iframe12" width="100%" height="100%"></iframe>
         <iframe src="emergenciamed.html" id="iframe13" width="100%" height="100%"></iframe>
         <iframe src="policia.html" id="iframe14" width="100%" height="100%"></iframe>
         <iframe src="materiais.html" id="iframe15" width="100%" height="100%"></iframe>
