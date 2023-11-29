@@ -8,7 +8,9 @@
     <title>Atendimento de Ocorrências</title>
     <link rel="icon" type="image/png" href="image/logo_noar.png">
     <link rel="stylesheet" href="css/janelas.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+    <script src="https://kit.fontawesome.com/f87260a7c7.js" crossorigin="anonymous"></script>
+    <script src="jquery-1.8.2.min.js"></script>
+
     <style>
       .caixaresp{
         height: 600px;
@@ -24,16 +26,57 @@
 
 
   </head>
+  <script>
+    
 
+    function edita(){
+      document.getElementById('abre').style.display = 'none'
+    }
+    
+    function Listar(){
+    
+        var dados = $('#form1').serialize(); // TODOS OS CAMPOS DO <form> DEVEM TER 'name='
+        
+        $.ajax({
+          type: "POST",
+          url: "arq15.php",
+          data: dados,
+          dataType: 'json',
+                  
+          success: function(meu_json)
+          {
+                
+            var valores = meu_json;       
+                    var lista = valores.dados;                   
+                },
+          error: function(xhr, status, error) {
+            // Aqui poderíamos preencher uma <div> com o innerHTML por exemplo
+            console.error('Ocorreu um erro ao enviar os dados: ' + error);
+            },
+          beforeSend: function(xhr) {
+            document.getElementById("carregare").style.display = "flex";
+          },
+          complete: function(xhr, status) {
+            document.getElementById("check").style.display = "flex";
+            window.parent.abriri();
+          },
+          timeout: 5000    // Define um tempo limite de 5 segundos (5000 milissegundos)
+        });
+    }
+    
+    </script>
 <body>
 
     <div class="container">
-        
+        <form action="" id="form1" method="post">
             <div class="separa">
                 <div class="d1">
                         <h3>Responsável pelo Preenchimento:</h3>
-                        <div class="pesquisa"><input type="text" id="mensagem" required="required" placeholder="Digite Aqui o Nome"><button onclick="Enviar();" class="button">&#187;</button></div> 
-                        
+                        <label for="opcao1" class="agrupamento2">
+                          <div class="arruma2">
+                              <input type="text" placeholder="Digite Aqui" name="opcao1">
+                          </div>
+                      </label>
                         </div>
 
 
@@ -43,62 +86,16 @@
             </div>
             <br>
             <div class="separa_btn">
-                <input type="button" value="Finalizar" class="btn" onclick="abriri();">
+                <input type="button" value="Finalizar" class="btn"  onclick="Listar();">
                 <input type="reset" value="Limpar" class="btn">
             </div>
-       
+          </form>
     </div>
-    
-<script>
-    
-  topico = "senai/mensagem2";  // Variável que ficará no servidor MQTT
-
-// Conexão:
-client = new Paho.MQTT.Client("broker.hivemq.com", Number(8000), "");
-
-// Funções executadas quando a conexão é perdida e quando uma mensagem chega:
-client.onConnectionLost = ConexaoPerdida;
-client.onMessageArrived = MensagemRecebida;
-
-// Função chamada quando a conexão for realizada:
-client.connect({onSuccess:Conectar});
-
-// A função Conectar deve criar a variável (tópico) no computador remoto:
-function Conectar() {
-  
-  client.subscribe(topico);  // Tópico (variável) criado no servidor MQTT
-  
-}
-
-function ConexaoPerdida(responseObject) {
-  if (responseObject.errorCode !== 0) {
-    resposta.innerHTML += "Desconectado";
-  }
-}
-
-// Função executada quando a variável (tópico) no servidor receber uma mensagem:
-function MensagemRecebida(message) {
-    resposta.innerHTML += "<div class='textcor'>" + message.payloadString+"</div>";
-}
-
-function Enviar()
-{
-  texto = mensagem.value;
-
-  message = new Paho.MQTT.Message(texto);
-  message.destinationName = topico;
-  client.send(message);
-}
-
-function edita(){
-  document.getElementById('abre').style.display = 'none'
-}
-
-function abriri(){
-  window.parent.abriri();
-}
-
-</script>
+    <div class="loading" id="carregare"><span class="carregamento"></span></div>
+    <div class="checko" id="check">
+        <i class="fa-solid fa-circle-check" style="color: #51cb25;"></i><br>
+        <span onclick="edit();">Alterar Dados</span>
+    </div>
 </body>
 
 </html>

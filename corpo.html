@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/janelas.css">
     <script src="jquery-1.8.2.min.js"></script>
     <script src="https://kit.fontawesome.com/f87260a7c7.js" crossorigin="anonymous"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <style>
         .d1 {
             width: 25%;
@@ -154,7 +155,7 @@
         <div class="texto">
             <h2>Localização dos Traumas:</h2>
         </div>
-        <form action="" method="post" id="form1">
+        <form action="arq12.php" method="post" id="form1"  enctype="multipart/form-data">
             <div class="separa">
                 <div class="d1">
                     <h3>Legendas:</h3>
@@ -273,9 +274,11 @@
                 </div>
             </div>
 
+            <input type="file" name="imagem" id="imagem">
+
             <div class="separa_btn">
-                <input type="button" value="Enviar" class="btn">
-                <input type="submit" value="Limpar" class="btn">
+                <input type="submit" value="Enviar" class="btn">
+                <input type="button" value="Limpar" class="btn"  onclick="capturarTela();">
             </div>
         </form>
     </div>
@@ -286,26 +289,23 @@
     </div>
 </body>
 <script>
-    function Listar() {
+ 
 
 
       
     function capturarTela() {
-    // Selecione o elemento que você deseja capturar (pode ser o corpo inteiro, por exemplo)
-    var foto = document.body;
-
-    // Use html2canvas para capturar o elemento e converter em uma imagem
-    html2canvas(foto).then(function(canvas) {
-        // Crie um elemento de imagem para exibir a captura de tela
-        var fotos = document.createElement('img');
-        fotos.src = canvas.toDataURL('image/png');
-
-        // Adicione a imagem à página ou faça o que quiser com ela
-        document.body.appendChild(fotos);
-    });
+   
+        var divElement = document.getElementById('fudo'); // Substitua 'seletor-da-div' pelo seletor real da sua div
+html2canvas(divElement).then(function(canvas) {
+    var imgData = canvas.toDataURL('image/png');
+    var img = new Image();
+    img.src = imgData;
+    document.body.appendChild(img);
+    document.getElementById('imagem').files = document.body.appendChild(img);
+});
 }
 
-    }
+
 
     function edit() {
         document.getElementById("check").style.display = "none";
