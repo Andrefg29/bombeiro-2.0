@@ -228,7 +228,7 @@ include('conecta.php');
                                     <td>$hospital</td>
                                     <td>$data</td>
                                     <td>
-                                    <img src='./image/lupa.png' width='25px'>
+                                    <img src='./image/lupa.png' width='25px' onclick='Abriez($id_paciente);'>
                                     </td>
                                 </tr>
                             ");
@@ -240,11 +240,8 @@ include('conecta.php');
         </div>
     </div>
     <script>
-        function Editar(txtnome, txtemail, txtsenha, txtcep) {
-            nome.value = txtnome;
-            email.value = txtemail;
-            senha.value = txtsenha;
-            cep.value = txtcep;
+        function Abriez(id) {
+            window.open("visualizar.php?codigo="+id, '_blank');
         }
 
         function Input(){

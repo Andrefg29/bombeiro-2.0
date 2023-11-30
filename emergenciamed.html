@@ -25,7 +25,7 @@
 
         $.ajax({
             type: "POST",
-            url: "arquivo.php",
+            url: "arq17.php",
             data: dados,
             dataType: 'json',
 
@@ -33,16 +33,7 @@
 
                 var valores = meu_json;
                 var lista = valores.dados;
-                for (x = 0; x < lista.length; x++) {
-                    console.log(lista[x].op1);
-                    console.log(lista[x].op2);
-                    console.log(lista[x].op3);
-                    console.log(lista[x].op4);
-                    console.log(lista[x].op5);
-                    console.log(lista[x].op6);
-                    console.log("  ");
-
-                }
+               
             },
             error: function (xhr, status, error) {
                 // Aqui poderíamos preencher uma <div> com o innerHTML por exemplo
@@ -53,7 +44,7 @@
             },
             complete: function (xhr, status) {
                 document.getElementById("check").style.display = "flex";
-                window.parent.abrir4();
+                window.parent.abrir(14);
             },
             timeout: 5000    // Define um tempo limite de 5 segundos (5000 milissegundos)
         });
@@ -88,20 +79,11 @@
                     </label><br>
 
                     <label  class="agrupamento2">
-                        <div class="titulo">
-                            <p>Aconteceu Outras Vezes?</p>
-                        </div>
-                        <div class="arruma4">
                             <label class="agrupamento">
-                                <input type="checkbox" id="op3" name="op3" value="Opção 3">
+                                <input type="checkbox" id="op2" name="op2" value="Opção 2">
                                 <span class="checkmark"></span>
-                                <div class="texto1">Sim</div>
-                            </label> <label class="agrupamento">
-                                <input type="checkbox" id="op4" name="op4" value="Opção 4">
-                                <span class="checkmark"></span>
-                                <div class="texto1">Não</div>
-                            </label><br>
-                        </div>
+                                <div class="texto1">Aconteceu Outras Vezes?</div>
+                            </label> 
                     </label><br>
 
                     <label class="agrupamento2">
@@ -109,26 +91,20 @@
                             <p>A Quanto Tempo Aconteceu?</p>
                         </div>
                         <div class="arruma2">
-                            <input type="time" placeholder="(Digite Aqui)" name="op1">
+                            <input type="time" placeholder="(Digite Aqui)" name="op3">
                         </div>
                     </label><br>
 
 
                     <label  class="agrupamento2">
-                        <div class="titulo">
-                            <p>Possui Algum Problema de Saúde?</p>
-                        </div>
-                        <div class="arruma4">
+                        
+                        
                             <label class="agrupamento">
-                                <input type="checkbox" id="op5" name="op5" value="Opção 5">
+                                <input type="checkbox" id="op4" name="op4" value="Opção 4">
                                 <span class="checkmark"></span>
-                                <div class="texto1">Sim</div>
-                            </label> <label class="agrupamento">
-                                <input type="checkbox" id="op6" name="op6" value="Opção 6">
-                                <span class="checkmark"></span>
-                                <div class="texto1">Não</div>
-                            </label><br>
-                        </div>
+                                <div class="texto1">Possui Algum Problema de Saúde?</div>
+                            </label> 
+                       
                     </label><br>
 
                     <label  class="agrupamento2">
@@ -136,26 +112,20 @@
                             <p>Quais?</p>
                         </div>
                         <div class="arruma2">
-                            <input type="text" placeholder="(Digite Aqui)" name="op1">
+                            <input type="text" placeholder="(Digite Aqui)" name="op5">
                         </div>
                     </label><br>
                         
 
                         <label  class="agrupamento2">
-                            <div class="titulo">
-                                <p>Faz Uso de Medicação?</p>
-                            </div>
-                            <div class="arruma4">
+                            
+                            
                                 <label class="agrupamento">
-                                    <input type="checkbox" id="op11" name="op11" value="Opção 11">
+                                    <input type="checkbox" id="op6" name="op6" value="Opção 6">
                                     <span class="checkmark"></span>
-                                    <div class="texto1">Sim</div>
-                                </label> <label class="agrupamento">
-                                    <input type="checkbox" id="op12" name="op12" value="Opção 12">
-                                    <span class="checkmark"></span>
-                                    <div class="texto1">Não</div>
-                                </label><br>
-                            </div><br>
+                                    <div class="texto1">Faz Uso de Medicação?</div>
+                                </label> 
+                            
                         </label>                
                 </div>
 
@@ -172,7 +142,7 @@
                             <p>Horário da Última Medicação:</p>
                         </div>
                         <div class="arruma2">
-                            <input type="time" placeholder="(Digite Aqui)" name="op1">
+                            <input type="time" placeholder="(Digite Aqui)" name="op7">
                         </div>
                     </label><br>
 
@@ -181,26 +151,19 @@
                             <p>Nome do(s) Remédios:</p>
                         </div>
                         <div class="arruma2">
-                            <input type="text" placeholder="Nome do Remédio" name="op6">
+                            <input type="text" placeholder="Nome do Remédio" name="op8">
 
                         </div>
                     </label><br>
 
                     <label  class="agrupamento2">
-                        <div class="titulo">
-                            <p>Alérgico a Alguma Coisa?</p>
-                        </div>
-                        <div class="arruma4">
+                        
                             <label  class="agrupamento">
                                 <input type="checkbox" id="op9" name="op9" value="Opção 9">
                                 <span class="checkmark"></span>
-                                <div class="texto1">Sim</div>
-                            </label> <label  class="agrupamento">
-                                <input type="checkbox" id="op10" name="op10" value="Opção 10">
-                                <span class="checkmark"></span>
-                                <div class="texto1">Não</div>
-                            </label><br><br>
-                        </div>
+                                <div class="texto1">Alérgico a Alguma Coisa?</div>
+                            </label> 
+    
                     </label>
 
 
@@ -209,27 +172,17 @@
                             <p>Se Sim, Especifique:</p>
                         </div>
                         <div class="arruma2">
-                            <input type="text" placeholder="(Digite Aqui)" name="op1">
+                            <input type="text" placeholder="(Digite Aqui)" name="op10">
                         </div>
                     </label><br>
                     
 
-                        <label  class="agrupamento2">
-                            <div class="titulo">
-                                <p>Ingeriu Algum Alimento ou Líquido nas Últimas ≥6Hrs ?</p>
-                            </div>
-                            <div class="arruma4">
+                        <label  class="agrupamento2"> 
                                 <label class="agrupamento">
                                     <input type="checkbox" id="op11" name="op11" value="Opção 11">
                                     <span class="checkmark"></span>
-                                    <div class="texto1">Sim</div>
-                                </label> <label class="agrupamento">
-                                    <input type="checkbox" id="op12" name="op12" value="Opção 12">
-                                    <span class="checkmark"></span>
-                                    <div class="texto1">Não</div>
-                                </label><br>
-                            </div><br>
-    
+                                    <div class="texto1">Ingeriu Algum Alimento ou Líquido nas Últimas ≥6Hrs ?</div>
+                                </label>    
                         </label><br>
                         
                         <label class="agrupamento2">
@@ -237,7 +190,7 @@
                                 <p>Que Horas:</p>
                             </div>
                             <div class="arruma2">
-                                <input type="time" placeholder="(Digite Aqui)" name="op1">
+                                <input type="time" placeholder="(Digite Aqui)" name="op12">
                             </div>
                         </label><br>
                         
